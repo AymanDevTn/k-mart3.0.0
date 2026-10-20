@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1168B3" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/assets/app-icon-192.png" />
+  <meta name="description" content="K-mart Market Tunisia — maquette interactive de la boutique en ligne." />
+  <title>K-mart Market Tunisia — UI Preview</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div class="announcement">🇹🇳 La marketplace tunisienne pour tout ce dont vous avez besoin</div>
+  <header class="site-header">
+    <a class="brand brand-image" href="#" aria-label="K-mart Market accueil"><img src="/assets/kmart-brand-identity.png" alt="K-mart.tn — Market for everything" /></a>
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search" placeholder="Rechercher un produit, une marque..." aria-label="Rechercher" />
+      <button type="submit" aria-label="Rechercher">⌕</button>
+    </form>
+    <div class="header-actions">
+      <button class="icon-button" id="languageBtn" title="Changer de langue">FR⌄</button>
+      <button class="icon-button" id="accountBtn" title="Compte">♙ <span>Compte</span></button>
+      <button class="cart-button" id="cartOpen">🛒 <span>Panier</span><b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <div class="install-nudge" id="installNudge" role="status"><span class="install-nudge-icon">↥</span><span><b>Installez K-mart Market</b><small>Accédez plus vite à vos bonnes affaires</small></span><button id="installNudgeBtn">Installer</button><button class="nudge-close" id="installNudgeClose" aria-label="Fermer">×</button></div>
+  <nav class="category-nav" aria-label="Catégories">
+    <button class="nav-category active" data-category="Tous">☰ Toutes les catégories</button>
+    <button class="nav-category" data-category="Électronique">Électronique</button>
+    <button class="nav-category" data-category="Maison">Maison</button>
+    <button class="nav-category" data-category="Mode">Mode</button>
+    <button class="nav-category" data-category="Beauté">Beauté</button>
+    <button class="nav-category" data-category="Sport">Sport & loisirs</button>
+    <span class="nav-promo">Offres du jour <b>→</b></span>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">K-MART MARKET · TUNISIE</span>
+        <h1>Tout ce que vous aimez.<br><em>Au même endroit.</em></h1>
+        <p>Découvrez des milliers de produits, comparez les offres et faites-vous livrer partout en Tunisie.</p>
+        <button class="primary-button" id="shopNow">Découvrir les produits <span>→</span></button>
+        <div class="hero-trust"><span>✓ Paiement à la livraison</span><span>✓ Vendeurs sélectionnés</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration promotionnelle">
+        <div class="hero-circle"></div>
+        <div class="float-card card-one"><span>🎧</span><small>Tech & audio</small></div>
+        <div class="float-card card-two"><span>🏡</span><small>Maison</small></div>
+        <div class="float-card card-three"><span>👟</span><small>Style</small></div>
+        <div class="hero-bag">K<span>-mart</span><small>market</small></div>
+        <div class="sale-sticker">BONNES<br><b>OFFRES</b></div>
+      </div>
+    </section>
+
+    <section class="daily-promo-row" aria-label="Récompense de visite et promotion limitée">
+      <article class="daily-checkin" id="dailyCheckinCard">
+        <div class="daily-icon">🎁</div><div class="daily-copy"><span class="eyebrow">BONUS DE VISITE</span><h2>Votre rendez-vous quotidien</h2><p>Revenez chaque jour pour garder votre série de visites et débloquer des points démo.</p><div class="streak-days" id="streakDays"><span>J1</span><span>J2</span><span>J3</span><span>J4</span><span>J5</span><span>J6</span><span>J7</span></div></div>
+        <div class="daily-claim"><b><span id="pointsValue">0</span> pts</b><small id="streakLabel">Série : 0 jour</small><button id="dailyClaimBtn" class="primary-button">Récupérer mon bonus</button></div>
+      </article>
+      <article class="flash-sale">
+        <div class="flash-top"><span class="flash-tag">⚡ OFFRE FLASH</span><span class="flash-live"><i></i> TEMPS LIMITÉ</span></div>
+        <h2>Les offres ne durent pas éternellement.</h2><p>Une sélection de produits à prix spécial — jusqu'à la fin du compte à rebours.</p>
+        <div class="countdown" aria-label="Compte à rebours de la promotion"><div><b id="countHours">05</b><small>HEURES</small></div><span>:</span><div><b id="countMinutes">00</b><small>MINUTES</small></div><span>:</span><div><b id="countSeconds">00</b><small>SECONDES</small></div></div>
+        <button class="flash-cta" id="flashShopBtn">Voir les offres <span>→</span></button>
+      </article>
+    </section>
+
+    <section class="benefits">
+      <div><span class="benefit-icon">🚚</span><p><b>Livraison en Tunisie</b><small>Partout où vous êtes</small></p></div>
+      <div><span class="benefit-icon">🔒</span><p><b>Achats en confiance</b><small>Parcours sécurisé</small></p></div>
+      <div><span class="benefit-icon">💳</span><p><b>Paiement flexible</b><small>Options locales à venir</small></p></div>
+      <div><span class="benefit-icon">↩</span><p><b>Support client</b><small>Nous sommes là pour vous</small></p></div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-heading">
+        <div><span class="eyebrow">À NE PAS MANQUER</span><h2>Nos sélections <span>du moment</span></h2></div>
+        <button class="text-button" id="clearFilters">Voir tout <span>→</span></button>
+      </div>
+      <div class="category-tiles">
+        <button class="category-tile tile-tech" data-category="Électronique"><span>🎧</span><b>High-tech</b><small>Les essentiels connectés</small></button>
+        <button class="category-tile tile-home" data-category="Maison"><span>🪴</span><b>Maison & déco</b><small>Le confort au quotidien</small></button>
+        <button class="category-tile tile-fashion" data-category="Mode"><span>👟</span><b>Mode & accessoires</b><small>Votre style, vos règles</small></button>
+        <button class="category-tile tile-beauty" data-category="Beauté"><span>✨</span><b>Beauté & soin</b><small>Vos petits rituels</small></button>
+      </div>
+      <div class="product-toolbar"><span id="resultLabel">Produits populaires</span><label>Trier par <select id="sortSelect"><option value="featured">Recommandés</option><option value="low">Prix croissant</option><option value="high">Prix décroissant</option></select></label></div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>Aucun produit ne correspond à votre recherche.</div>
+    </section>
+
+    <section class="seller-banner">
+      <div><span class="eyebrow">VOUS ÊTES VENDEUR ?</span><h2>Développez votre activité<br>avec K-mart Market.</h2><p>Présentez vos produits à de nouveaux clients partout en Tunisie.</p></div>
+      <button class="light-button" id="sellerBtn">Découvrir l'espace vendeur →</button>
+      <div class="seller-graphic">📦</div>
+    </section>
+
+    <section class="newsletter">
+      <div><h2>Les bonnes affaires arrivent dans votre boîte mail.</h2><p>Recevez les nouveautés et les offres sélectionnées.</p></div>
+      <form id="newsletterForm"><input type="email" placeholder="Votre adresse e-mail" required aria-label="Adresse e-mail"><button class="primary-button">S'inscrire</button></form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><a class="brand brand-image" href="#"><img src="/assets/kmart-brand-identity.png" alt="K-mart.tn — Market for everything" /></a><p>Votre marketplace, à votre rythme.</p></div>
+    <div><b>Découvrir</b><a href="#products">Tous les produits</a><a href="#products">Offres du jour</a><a href="#products">Catégories</a></div>
+    <div><b>Besoin d'aide ?</b><a href="#" class="demo-link">Centre d'aide</a><a href="#" class="demo-link">Livraison & retours</a><a href="#" class="demo-link">Nous contacter</a></div>
+    <div><b>Suivez K-mart</b><p class="socials">◎　f　▶</p><small>© 2026 K-mart Market Tunisia · Maquette UI</small></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="install-modal" id="installModal" role="dialog" aria-modal="true" aria-labelledby="installTitle">
+    <button class="close-button install-modal-close" id="installModalClose" aria-label="Fermer">×</button><div class="install-hero-icon">↥</div><span class="eyebrow">VOTRE BOUTIQUE, À PORTÉE DE CLIC</span><h2 id="installTitle">Installez K-mart Market</h2><p>Ajoutez la boutique à votre écran d'accueil ou au bureau de votre ordinateur pour la retrouver comme une application.</p><div class="install-platform-note" id="installPlatformNote">Sur mobile ou Windows, utilisez le bouton d'installation de votre navigateur si disponible.</div><button class="primary-button install-main-btn" id="installMainBtn">Installer l'application <span>→</span></button><button class="install-later" id="installLaterBtn">Peut-être plus tard</button></div>
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Panier" aria-hidden="true">
+    <div class="drawer-heading"><div><span class="eyebrow">VOTRE SÉLECTION</span><h2>Mon panier</h2></div><button id="cartClose" class="close-button" aria-label="Fermer">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-bottom"><div class="total-row"><span>Sous-total</span><b id="cartTotal">0,000 TND</b></div><p>Les frais de livraison seront calculés à l'étape suivante.</p><button class="primary-button full-button" id="checkoutBtn">Continuer <span>→</span></button><small>Maquette de démonstration — aucune commande réelle.</small></div>
+  </aside>
+
+<div class="product-detail-modal" id="productDetailModal" role="dialog" aria-modal="true"><div class="product-detail-panel"><button class="close-button product-detail-close" id="productDetailClose">×</button><img id="productDetailImage" alt=""><div class="product-detail-copy"><h2 id="productDetailTitle">Détails du produit</h2><div id="productDetailPrice" class="product-detail-price"></div><p id="productDetailDescription"></p><p class="product-demo-note">Photo illustrative. Prix et disponibilité de démonstration.</p><button class="primary-button" id="productDetailAdd">Ajouter au panier</button><button id="productDetailDone" class="product-detail-done">Continuer mes achats</button></div></div></div>
+  <div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="close-button modal-close" id="modalClose" aria-label="Fermer">×</button>
+    <span class="modal-icon">✦</span><h2 id="modalTitle">Aperçu de démonstration</h2><p id="modalText">Cette fonctionnalité sera connectée dans la prochaine version.</p><button class="primary-button" id="modalOk">Compris</button>
+  </div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

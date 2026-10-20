@@ -1,0 +1,375 @@
+{
+  "app": {
+    "name": "K-mart Market Tunisia",
+    "tagline": "Votre marketplace, à votre rythme."
+  },
+  "header": {
+    "searchPlaceholder": "Rechercher un produit, une marque...",
+    "searchAriaLabel": "Rechercher",
+    "languageBtn": "FR",
+    "languageBtnAriaLabel": "Changer de langue",
+    "accountBtn": "Compte",
+    "accountBtnAriaLabel": "Compte utilisateur",
+    "cartBtn": "Panier",
+    "cartBtnAriaLabel": "Panier d'achat"
+  },
+  "nav": {
+    "allCategories": "Toutes les catégories",
+    "electronics": "Électronique",
+    "home": "Maison",
+    "fashion": "Mode",
+    "beauty": "Beauté",
+    "sports": "Sport & loisirs",
+    "dailyOffers": "Offres du jour"
+  },
+  "hero": {
+    "eyebrow": "K-MART MARKET · TUNISIE",
+    "title": "Tout ce que vous aimez.<br><em>Au même endroit.</em>",
+    "subtitle": "Découvrez des milliers de produits, comparez les offres et faites-vous livrer partout en Tunisie.",
+    "shopNow": "Découvrir les produits",
+    "trustPayment": "Paiement à la livraison",
+    "trustSellers": "Vendeurs sélectionnés"
+  },
+  "dailyCheckin": {
+    "eyebrow": "BONUS DE VISITE",
+    "title": "Votre rendez-vous quotidien",
+    "description": "Revenez chaque jour pour garder votre série de visites et débloquer des points démo.",
+    "streakLabel": "Série : {count} jour{plural}",
+    "points": "{count} pts",
+    "claimBtn": "Récupérer mon bonus",
+    "claimedBtn": "Bonus récupéré ✓",
+    "toastClaimed": "🎁 +10 points démo ajoutés !",
+    "toastAlreadyClaimed": "Votre bonus du jour est déjà récupéré."
+  },
+  "flashSale": {
+    "tag": "⚡ OFFRE FLASH",
+    "live": "TEMPS LIMITÉ",
+    "title": "Les offres ne durent pas éternellement.",
+    "description": "Une sélection de produits à prix spécial — jusqu'à la fin du compte à rebours.",
+    "countdownHours": "HEURES",
+    "countdownMinutes": "MINUTES",
+    "countdownSeconds": "SECONDES",
+    "ctaBtn": "Voir les offres"
+  },
+  "benefits": {
+    "delivery": {
+      "icon": "🚚",
+      "title": "Livraison en Tunisie",
+      "subtitle": "Partout où vous êtes"
+    },
+    "security": {
+      "icon": "🔒",
+      "title": "Achats en confiance",
+      "subtitle": "Parcours sécurisé"
+    },
+    "payment": {
+      "icon": "💳",
+      "title": "Paiement flexible",
+      "subtitle": "Options locales à venir"
+    },
+    "support": {
+      "icon": "↩",
+      "title": "Support client",
+      "subtitle": "Nous sommes là pour vous"
+    }
+  },
+  "products": {
+    "sectionTitle": "Nos sélections <span>du moment</span>",
+    "eyebrow": "À NE PAS MANQUER",
+    "clearFilters": "Voir tout",
+    "resultLabel": {
+      "all": "Produits populaires",
+      "category": "{category} · {count} produit{plural}"
+    },
+    "sortLabel": "Trier par",
+    "sortOptions": {
+      "featured": "Recommandés",
+      "low": "Prix croissant",
+      "high": "Prix décroissant",
+      "newest": "Plus récents",
+      "topRated": "Mieux notés"
+    },
+    "emptyState": "Aucun produit ne correspond à votre recherche.",
+    "categories": {
+      "tech": {
+        "icon": "🎧",
+        "title": "High-tech",
+        "subtitle": "Les essentiels connectés"
+      },
+      "home": {
+        "icon": "🪴",
+        "title": "Maison & déco",
+        "subtitle": "Le confort au quotidien"
+      },
+      "fashion": {
+        "icon": "👟",
+        "title": "Mode & accessoires",
+        "subtitle": "Votre style, vos règles"
+      },
+      "beauty": {
+        "icon": "✨",
+        "title": "Beauté & soin",
+        "subtitle": "Vos petits rituels"
+      }
+    },
+    "productCard": {
+      "rating": "★ ★ ★ ★ ★",
+      "addToCart": "Ajouter au panier",
+      "viewDetails": "Voir les détails →",
+      "badges": {
+        "POPULAIRE": "POPULAIRE",
+        "NOUVEAU": "NOUVEAU",
+        "BEST-SELLER": "BEST-SELLER",
+        "TENDANCE": "TENDANCE",
+        "PETIT PRIX": "PETIT PRIX",
+        "COUP DE CŒUR": "COUP DE CŒUR",
+        "SÉLECTION": "SÉLECTION",
+        "-15%": "-15%"
+      }
+    },
+    "detailModal": {
+      "closeAriaLabel": "Fermer les détails",
+      "priceLabel": "Prix",
+      "description": "Description",
+      "demoNote": "Photo illustrative. Prix et disponibilité de démonstration.",
+      "addToCart": "Ajouter au panier",
+      "continueShopping": "Continuer mes achats",
+      "reviewsTab": "Avis ({count})",
+      "writeReview": "Écrire un avis",
+      "noReviews": "Aucun avis pour le moment. Soyez le premier !",
+      "verifiedPurchase": "Achat vérifié",
+      "helpful": "Utile ({count})"
+    }
+  },
+  "sellerBanner": {
+    "eyebrow": "VOUS ÊTES VENDEUR ?",
+    "title": "Développez votre activité<br>avec K-mart Market.",
+    "description": "Présentez vos produits à de nouveaux clients partout en Tunisie.",
+    "ctaBtn": "Découvrir l'espace vendeur →"
+  },
+  "newsletter": {
+    "title": "Les bonnes affaires arrivent dans votre boîte mail.",
+    "description": "Recevez les nouveautés et les offres sélectionnées.",
+    "placeholder": "Votre adresse e-mail",
+    "submitBtn": "S'inscrire",
+    "successTitle": "Merci pour votre intérêt !",
+    "successMessage": "L'inscription à la newsletter est simulée dans cette maquette. Aucune donnée n'a été envoyée."
+  },
+  "footer": {
+    "discover": "Découvrir",
+    "allProducts": "Tous les produits",
+    "dailyOffers": "Offres du jour",
+    "categories": "Catégories",
+    "help": "Besoin d'aide ?",
+    "helpCenter": "Centre d'aide",
+    "shippingReturns": "Livraison & retours",
+    "contact": "Nous contacter",
+    "follow": "Suivez K-mart",
+    "copyright": "© 2026 K-mart Market Tunisia · Maquette UI"
+  },
+  "cart": {
+    "title": "Mon panier",
+    "closeAriaLabel": "Fermer le panier",
+    "empty": "Votre panier est vide.<br><br>Ajoutez quelques produits pour commencer !",
+    "subtotal": "Sous-total",
+    "shippingNote": "Les frais de livraison seront calculés à l'étape suivante.",
+    "checkoutBtn": "Continuer",
+    "demoNote": "Maquette de démonstration — aucune commande réelle.",
+    "removeAriaLabel": "Supprimer du panier",
+    "qtyDecrease": "Diminuer la quantité",
+    "qtyIncrease": "Augmenter la quantité"
+  },
+  "checkout": {
+    "step1": "Panier",
+    "step2": "Livraison",
+    "step3": "Paiement",
+    "step4": "Confirmation",
+    "shippingTitle": "Adresse de livraison",
+    "shippingSubtitle": "Où devons-nous envoyer votre commande ?",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "city": "Ville/Gouvernorat",
+    "postalCode": "Code postal",
+    "saveAddress": "Enregistrer cette adresse",
+    "paymentTitle": "Mode de paiement",
+    "paymentSubtitle": "Comment souhaitez-vous payer ?",
+    "paymentMethods": {
+      "cod": {
+        "label": "Paiement à la livraison",
+        "description": "Payez en espèces lors de la livraison"
+      },
+      "card": {
+        "label": "Carte bancaire (démo)",
+        "description": "Visa, Mastercard, CIB — simulation uniquement"
+      },
+      "mobile": {
+        "label": "Paiement mobile (démo)",
+        "description": "Flouci, D17, e-Dinar — simulation uniquement"
+      }
+    },
+    "reviewTitle": "Récapitulatif de la commande",
+    "termsLabel": "J'accepte les conditions générales de vente",
+    "placeOrder": "Confirmer la commande",
+    "successTitle": "Commande confirmée !",
+    "successMessage": "Votre commande #{orderId} a été passée avec succès. Un email de confirmation vous sera envoyé.",
+    "orderNumber": "Numéro de commande"
+  },
+  "wishlist": {
+    "title": "Ma liste d'envies",
+    "closeAriaLabel": "Fermer la liste d'envies",
+    "empty": "Votre liste d'envies est vide.<br><br>Ajoutez des produits en cliquant sur le cœur !",
+    "addAriaLabel": "Ajouter à la liste d'envies",
+    "removeAriaLabel": "Retirer de la liste d'envies",
+    "toastAdded": "Ajouté à votre liste d'envies ❤️",
+    "toastRemoved": "Retiré de votre liste d'envies"
+  },
+  "recentlyViewed": {
+    "title": "Produits consultés récemment",
+    "empty": "Aucun produit consulté récemment.",
+    "clearHistory": "Effacer l'historique",
+    "clearConfirm": "Voulez-vous vraiment effacer votre historique ?"
+  },
+  "filters": {
+    "title": "Filtres",
+    "closeAriaLabel": "Fermer les filtres",
+    "priceRange": "Fourchette de prix",
+    "minPrice": "Min (TND)",
+    "maxPrice": "Max (TND)",
+    "rating": "Note minimale",
+    "brands": "Marques",
+    "availability": "Disponibilité",
+    "inStock": "En stock",
+    "onSale": "En promotion",
+    "clearAll": "Tout effacer",
+    "apply": "Appliquer ({count})",
+    "resultsCount": "{count} produit{plural} trouvé{plural}"
+  },
+  "sellerDashboard": {
+    "title": "Espace Vendeur",
+    "tabs": {
+      "overview": "Tableau de bord",
+      "products": "Mes produits",
+      "orders": "Commandes",
+      "analytics": "Analytiques",
+      "settings": "Paramètres"
+    },
+    "stats": {
+      "revenue": "Chiffre d'affaires",
+      "orders": "Commandes",
+      "products": "Produits actifs",
+      "rating": "Note moyenne"
+    },
+    "recentOrders": "Commandes récentes",
+    "noOrders": "Aucune commande pour le moment.",
+    "productsTable": {
+      "name": "Produit",
+      "price": "Prix",
+      "stock": "Stock",
+      "status": "Statut",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Actif",
+      "inactive": "Inactif",
+      "outOfStock": "Rupture"
+    },
+    "addProduct": "Ajouter un produit",
+    "editProduct": "Modifier",
+    "deleteProduct": "Supprimer"
+  },
+  "auth": {
+    "loginTitle": "Connexion",
+    "registerTitle": "Inscription",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "name": "Nom complet",
+    "phone": "Téléphone (optionnel)",
+    "loginBtn": "Se connecter",
+    "registerBtn": "Créer un compte",
+    "forgotPassword": "Mot de passe oublié ?",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Déjà un compte ?",
+    "demoNote": "Mode démo — aucune authentification réelle."
+  },
+  "reviews": {
+    "title": "Avis clients",
+    "rating": "Note",
+    "writeReview": "Écrire un avis",
+    "yourRating": "Votre note",
+    "reviewTitle": "Titre de l'avis",
+    "reviewContent": "Votre avis",
+    "submitBtn": "Publier l'avis",
+    "loginToReview": "Connectez-vous pour laisser un avis",
+    "verifiedPurchase": "Achat vérifié",
+    "helpful": "Cet avis vous a-t-il été utile ?",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "install": {
+    "nudgeTitle": "Installez K-mart Market",
+    "nudgeSubtitle": "Accédez plus vite à vos bonnes affaires",
+    "nudgeBtn": "Installer",
+    "modalTitle": "Installez K-mart Market",
+    "modalSubtitle": "Ajoutez la boutique à votre écran d'accueil ou au bureau de votre ordinateur pour la retrouver comme une application.",
+    "platformNote": "Sur mobile ou Windows, utilisez le bouton d'installation de votre navigateur si disponible.",
+    "installBtn": "Installer l'application",
+    "laterBtn": "Peut-être plus tard",
+    "successToast": "K-mart Market a été installé !",
+    "instructions": {
+      "default": "Ouvrez le menu de votre navigateur et choisissez « Installer l'application » ou « Ajouter à l'écran d'accueil ». Sur Windows, cherchez l'icône d'installation dans la barre d'adresse.",
+      "ios": "Sur iPhone/iPad : touchez Partager dans Safari, puis « Sur l'écran d'accueil ». iOS ne propose pas le même bouton d'installation que Chrome.",
+      "android": "Sur Android : ouvrez le menu ⋮ de Chrome, puis « Installer l'application » ou « Ajouter à l'écran d'accueil ».",
+      "windows": "Sur Windows : dans Edge ou Chrome, utilisez l'icône Installer dans la barre d'adresse, ou le menu du navigateur → Installer cette application."
+    }
+  },
+  "toast": {
+    "addedToCart": "Produit ajouté au panier",
+    "removedFromCart": "Produit retiré du panier",
+    "checkoutDemo": "Le panier est interactif, mais le paiement et les commandes réelles seront intégrés dans la version Worker + KV."
+  },
+  "modals": {
+    "demoTitle": "Aperçu de démonstration",
+    "demoText": "Cette fonctionnalité sera connectée dans la prochaine version.",
+    "okBtn": "Compris",
+    "languageTitle": "Langues",
+    "languageText": "La maquette est actuellement en français. La version suivante ajoutera l'arabe avec affichage RTL et l'anglais.",
+    "accountTitle": "Espace client",
+    "accountText": "Connexion, inscription et suivi des commandes seront intégrés dans la version fonctionnelle.",
+    "sellerTitle": "Espace vendeur",
+    "sellerText": "La gestion des vendeurs et des catalogues sera développée dans la version Worker + KV."
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "yes": "Oui",
+    "no": "Non",
+    "required": "Champ requis",
+    "optional": "Optionnel"
+  },
+  "accessibility": {
+    "skipToMain": "Aller au contenu principal",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "expandSection": "Développer la section",
+    "collapseSection": "Réduire la section",
+    "selected": "Sélectionné",
+    "notSelected": "Non sélectionné",
+    "currentPage": "Page actuelle",
+    "page": "Page",
+    "of": "sur"
+  }
+}

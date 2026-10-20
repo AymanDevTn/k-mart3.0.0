@@ -1,0 +1,375 @@
+{
+  "app": {
+    "name": "K-mart Market تونس",
+    "tagline": "متجركم، حسب إيقاعكم."
+  },
+  "header": {
+    "searchPlaceholder": "ابحث عن منتج، علامة تجارية...",
+    "searchAriaLabel": "بحث",
+    "languageBtn": "عربي",
+    "languageBtnAriaLabel": "تغيير اللغة",
+    "accountBtn": "حسابي",
+    "accountBtnAriaLabel": "حساب المستخدم",
+    "cartBtn": "السلة",
+    "cartBtnAriaLabel": "سلة التسوق"
+  },
+  "nav": {
+    "allCategories": "جميع الفئات",
+    "electronics": "إلكترونيات",
+    "home": "منزل",
+    "fashion": "أزياء",
+    "beauty": "جمال",
+    "sports": "رياضة وترفيه",
+    "dailyOffers": "عروض اليوم"
+  },
+  "hero": {
+    "eyebrow": "K-MART MARKET · تونisia",
+    "title": "كل ما تحبه.<br><em>في مكان واحد.</em>",
+    "subtitle": "اكتشف آلاف المنتجات، قارن العروض واحصل على التوصيل في كل أنحاء تونس.",
+    "shopNow": "اكتشف المنتجات",
+    "trustPayment": "الدفع عند الاستلام",
+    "trustSellers": "بائعون مختارون"
+  },
+  "dailyCheckin": {
+    "eyebrow": "مكافأة الزيارة",
+    "title": "موعدك اليومي",
+    "description": "عد كل يوم للحفاظ على سلسلة زياراتك وفتح نقاط تجريبية.",
+    "streakLabel": "سلسلة: {count} يوم{plural}",
+    "points": "{count} نقطة",
+    "claimBtn": "احصل على مكافأتي",
+    "claimedBtn": "تم استلام المكافأة ✓",
+    "toastClaimed": "🎁 تمت إضافة +10 نقاط تجريبية!",
+    "toastAlreadyClaimed": "لقد استلمت مكافأة اليوم بالفعل."
+  },
+  "flashSale": {
+    "tag": "⚡ عرض سريع",
+    "live": "وقت محدود",
+    "title": "العروض لا تدوم للأبد.",
+    "description": "مجموعة من المنتجات بأسعار خاصة — حتى نهاية العد التنازلي.",
+    "countdownHours": "ساعات",
+    "countdownMinutes": "دقائق",
+    "countdownSeconds": "ثواني",
+    "ctaBtn": "عرض العروض"
+  },
+  "benefits": {
+    "delivery": {
+      "icon": "🚚",
+      "title": "توصيل في تونس",
+      "subtitle": "أينما كنت"
+    },
+    "security": {
+      "icon": "🔒",
+      "title": "تسوق بثقة",
+      "subtitle": "مسار آمن"
+    },
+    "payment": {
+      "icon": "💳",
+      "title": "دفع مرن",
+      "subtitle": "خيارات محلية قادمة"
+    },
+    "support": {
+      "icon": "↩",
+      "title": "دعم العملاء",
+      "subtitle": "نحن هنا من أجلكم"
+    }
+  },
+  "products": {
+    "sectionTitle": "اختياراتنا <span>الحالية</span>",
+    "eyebrow": "لا تفوتوا",
+    "clearFilters": "عرض الكل",
+    "resultLabel": {
+      "all": "منتجات شائعة",
+      "category": "{category} · {count} منتج{plural}"
+    },
+    "sortLabel": "ترتيب حسب",
+    "sortOptions": {
+      "featured": "موصى بها",
+      "low": "السعر: من الأقل للأعلى",
+      "high": "السعر: من الأعلى للأقل",
+      "newest": "الأحدث",
+      "topRated": "الأعلى تقييماً"
+    },
+    "emptyState": "لا يوجد منتجات تطابق بحثك.",
+    "categories": {
+      "tech": {
+        "icon": "🎧",
+        "title": "تقنية عالية",
+        "subtitle": "الأساسيات المتصلة"
+      },
+      "home": {
+        "icon": "🪴",
+        "title": "منزل وديكور",
+        "subtitle": "الراحة اليومية"
+      },
+      "fashion": {
+        "icon": "👟",
+        "title": "أزياء وإكسسوارات",
+        "subtitle": "ستايلك، قواعدك"
+      },
+      "beauty": {
+        "icon": "✨",
+        "title": "جمال وعناية",
+        "subtitle": "طقوسك الصغيرة"
+      }
+    },
+    "productCard": {
+      "rating": "★ ★ ★ ★ ★",
+      "addToCart": "أضف للسلة",
+      "viewDetails": "عرض التفاصيل →",
+      "badges": {
+        "POPULAIRE": "شائع",
+        "NOUVEAU": "جديد",
+        "BEST-SELLER": "الأكثر مبيعاً",
+        "TENDANCE": "رائج",
+        "PETIT PRIX": "سعر صغير",
+        "COUP DE CŒUR": "مفضل",
+        "SÉLECTION": "مختار",
+        "-15%": "-15%"
+      }
+    },
+    "detailModal": {
+      "closeAriaLabel": "إغلاق التفاصيل",
+      "priceLabel": "السعر",
+      "description": "الوصف",
+      "demoNote": "صورة توضيحية. السعر والتوفر للتجربة فقط.",
+      "addToCart": "أضف للسلة",
+      "continueShopping": "مواصلة التسوق",
+      "reviewsTab": "آراء ({count})",
+      "writeReview": "كتابة رأي",
+      "noReviews": "لا توجد آراء بعد. كن أول من يكتب!",
+      "verifiedPurchase": "شراء مؤكد",
+      "helpful": "مفيد ({count})"
+    }
+  },
+  "sellerBanner": {
+    "eyebrow": "أنت بائع؟",
+    "title": "طور نشاطك<br>مع K-mart Market.",
+    "description": "اعرض منتجاتك على عملاء جدد في كل أنحاء تونس.",
+    "ctaBtn": "اكتشف مساحة البائع →"
+  },
+  "newsletter": {
+    "title": "العروض الجيدة تصل إلى بريدك الإلكتروني.",
+    "description": "تلقى nouveautés والعروض المختارة.",
+    "placeholder": "بريدك الإلكتروني",
+    "submitBtn": "اشتراك",
+    "successTitle": "شكراً لاهتمامك!",
+    "successMessage": "الاشتراك في النشرة الإخبارية محاكى في هذه المعاينة. لم يتم إرسال أي بيانات."
+  },
+  "footer": {
+    "discover": "اكتشف",
+    "allProducts": "جميع المنتجات",
+    "dailyOffers": "عروض اليوم",
+    "categories": "الفئات",
+    "help": "بحاجة مساعدة؟",
+    "helpCenter": "مركز المساعدة",
+    "shippingReturns": "التوصيل والإرجاع",
+    "contact": "اتصل بنا",
+    "follow": "تابعوا K-mart",
+    "copyright": "© 2026 K-mart Market Tunisia · واجهة تجريبية"
+  },
+  "cart": {
+    "title": "سلتي",
+    "closeAriaLabel": "إغلاق السلة",
+    "empty": "سلتك فارغة.<br><br>أضف بعض المنتجات للبدء!",
+    "subtotal": "المجموع الفرعي",
+    "shippingNote": "سيتم احتساب رسوم التوصيل في الخطوة التالية.",
+    "checkoutBtn": "متابعة",
+    "demoNote": "معاينة تجريبية — لا توجد طلبات حقيقية.",
+    "removeAriaLabel": "إزالة من السلة",
+    "qtyDecrease": "تقليل الكمية",
+    "qtyIncrease": "زيادة الكمية"
+  },
+  "checkout": {
+    "step1": "السلة",
+    "step2": "التوصيل",
+    "step3": "الدفع",
+    "step4": "التأكيد",
+    "shippingTitle": "عنوان التوصيل",
+    "shippingSubtitle": "أين نرسل طلبك؟",
+    "firstName": "الاسم الأول",
+    "lastName": "اللقب",
+    "phone": "الهاتف",
+    "address": "العنوان",
+    "city": "المدينة/الولاية",
+    "postalCode": "الرمز البريدي",
+    "saveAddress": "حفظ هذا العنوان",
+    "paymentTitle": "طريقة الدفع",
+    "paymentSubtitle": "كيف تود الدفع؟",
+    "paymentMethods": {
+      "cod": {
+        "label": "الدفع عند الاستلام",
+        "description": "ادفع نقداً عند التوصيل"
+      },
+      "card": {
+        "label": "بطاقة بنكية (تجريبي)",
+        "description": "Visa، Mastercard، CIB — محاكاة فقط"
+      },
+      "mobile": {
+        "label": "دفع بالهاتف (تجريبي)",
+        "description": "Flouci، D17، e-Dinar — محاكاة فقط"
+      }
+    },
+    "reviewTitle": "ملخص الطلب",
+    "termsLabel": "أوافق على شروط البيع العامة",
+    "placeOrder": "تأكيد الطلب",
+    "successTitle": "تم تأكيد الطلب!",
+    "successMessage": "تم تقديم طلبك #{orderId} بنجاح. سيتم إرسال بريد تأكيد.",
+    "orderNumber": "رقم الطلب"
+  },
+  "wishlist": {
+    "title": "قائمة أمنياتي",
+    "closeAriaLabel": "إغلاق قائمة الأمنيات",
+    "empty": "قائمة أمنياتك فارغة.<br><br>أضف منتجات بالنقر على القلب!",
+    "addAriaLabel": "أضف لقائمة الأمنيات",
+    "removeAriaLabel": "أزل من قائمة الأمنيات",
+    "toastAdded": "أضيف لقائمة أمنياتك ❤️",
+    "toastRemoved": "أزيل من قائمة أمنياتك"
+  },
+  "recentlyViewed": {
+    "title": "منتجات شاهدتها مؤخراً",
+    "empty": "لا توجد منتجات مشاهدة مؤخراً.",
+    "clearHistory": "مسح السجل",
+    "clearConfirm": "هل تريد حقاً مسح سجل المشاهدة؟"
+  },
+  "filters": {
+    "title": "المرشحات",
+    "closeAriaLabel": "إغلاق المرشحات",
+    "priceRange": "نطاق السعر",
+    "minPrice": "الأدنى (د.ت)",
+    "maxPrice": "الأقصى (د.ت)",
+    "rating": "الحد الأدنى للتقييم",
+    "brands": "العلامات التجارية",
+    "availability": "التوفر",
+    "inStock": "متوفر",
+    "onSale": "في عرض",
+    "clearAll": "مسح الكل",
+    "apply": "تطبيق ({count})",
+    "resultsCount": "تم العثور على {count} منتج{plural}"
+  },
+  "sellerDashboard": {
+    "title": "مساحة البائع",
+    "tabs": {
+      "overview": "لوحة التحكم",
+      "products": "منتجاتي",
+      "orders": "الطلبات",
+      "analytics": "التحليلات",
+      "settings": "الإعدادات"
+    },
+    "stats": {
+      "revenue": "المبيعات",
+      "orders": "الطلبات",
+      "products": "منتجات نشطة",
+      "rating": "التقييم المتوسط"
+    },
+    "recentOrders": "طلبات حديثة",
+    "noOrders": "لا توجد طلبات حالياً.",
+    "productsTable": {
+      "name": "المنتج",
+      "price": "السعر",
+      "stock": "المخزون",
+      "status": "الحالة",
+      "actions": "إجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "outOfStock": "نفد المخزون"
+    },
+    "addProduct": "إضافة منتج",
+    "editProduct": "تعديل",
+    "deleteProduct": "حذف"
+  },
+  "auth": {
+    "loginTitle": "تسجيل الدخول",
+    "registerTitle": "إنشاء حساب",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "name": "الاسم الكامل",
+    "phone": "الهاتف (اختياري)",
+    "loginBtn": "دخول",
+    "registerBtn": "إنشاء حساب",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "noAccount": "ليس لديك حساب؟",
+    "hasAccount": "لديك حساب بالفعل؟",
+    "demoNote": "وضع تجريبي — لا توجد مصادقة حقيقية."
+  },
+  "reviews": {
+    "title": "آراء العملاء",
+    "rating": "التقييم",
+    "writeReview": "كتابة رأي",
+    "yourRating": "تقييمك",
+    "reviewTitle": "عنوان الرأي",
+    "reviewContent": "رأيك",
+    "submitBtn": "نشر الرأي",
+    "loginToReview": "سجل الدخول لترك رأي",
+    "verifiedPurchase": "شراء مؤكد",
+    "helpful": "هل كان هذا الرأي مفيداً؟",
+    "yes": "نعم",
+    "no": "لا"
+  },
+  "install": {
+    "nudgeTitle": "ثبت K-mart Market",
+    "nudgeSubtitle": "وصول أسرع لعروضك المفضلة",
+    "nudgeBtn": "تثبيت",
+    "modalTitle": "ثبت K-mart Market",
+    "modalSubtitle": "أضف المتجر لشاشتك الرئيسية أو سطح المكتب لتجده كتطبيق.",
+    "platformNote": "على الجوال أو Windows، استخدم زر التثبيت في متصفحك إن وجد.",
+    "installBtn": "تثبيت التطبيق",
+    "laterBtn": "ربما لاحقاً",
+    "successToast": "تم تثبيت K-mart Market!",
+    "instructions": {
+      "default": "افتح قائمة متصفحك واختر «تثبيت التطبيق» أو «أضف للشاشة الرئيسية». على Windows، ابحث عن أيقونة التثبيت في شريط العنوان.",
+      "ios": "على iPhone/iPad: المس مشاركة في Safari، ثم «على الشاشة الرئيسية». iOS لا يوفر نفس زر التثبيت مثل Chrome.",
+      "android": "على Android: افتح قائمة ⋮ في Chrome، ثم «تثبيت التطبيق» أو «أضف للشاشة الرئيسية».",
+      "windows": "على Windows: في Edge أو Chrome، استخدم أيقونة التثبيت في شريط العنوان، أو قائمة المتصفح → تثبيت هذا التطبيق."
+    }
+  },
+  "toast": {
+    "addedToCart": "تم إضافة المنتج للسلة",
+    "removedFromCart": "تم إزالة المنتج من السلة",
+    "checkoutDemo": "السلة تفاعلية، لكن الدفع والطلبات الحقيقية ستدمج في نسخة Worker + KV."
+  },
+  "modals": {
+    "demoTitle": "معاينة تجريبية",
+    "demoText": "هذه الميزة ستتصل في النسخة القادمة.",
+    "okBtn": "فهمت",
+    "languageTitle": "اللغات",
+    "languageText": "المعاينة حالياً بالعربية. النسخة القادمة ستضيف الفرنسية والإنجليزية.",
+    "accountTitle": "مساحة العميل",
+    "accountText": "تسجيل الدخول، التسجيل ومتابعة الطلبات ستدمج في النسخة الوظيفية.",
+    "sellerTitle": "مساحة البائع",
+    "sellerText": "إدارة البائعين والكتالوجات ستطور في نسخة Worker + KV."
+  },
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "retry": "إعادة المحاولة",
+    "close": "إغلاق",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "view": "عرض",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "yes": "نعم",
+    "no": "لا",
+    "required": "حقل مطلوب",
+    "optional": "اختياري"
+  },
+  "accessibility": {
+    "skipToMain": "الانتقال للمحتوى الرئيسي",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "expandSection": "توسيع القسم",
+    "collapseSection": "طي القسم",
+    "selected": "محدد",
+    "notSelected": "غير محدد",
+    "currentPage": "الصفحة الحالية",
+    "page": "صفحة",
+    "of": "من"
+  }
+}

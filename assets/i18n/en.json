@@ -1,0 +1,375 @@
+{
+  "app": {
+    "name": "K-mart Market Tunisia",
+    "tagline": "Your marketplace, at your pace."
+  },
+  "header": {
+    "searchPlaceholder": "Search for a product, brand...",
+    "searchAriaLabel": "Search",
+    "languageBtn": "EN",
+    "languageBtnAriaLabel": "Change language",
+    "accountBtn": "Account",
+    "accountBtnAriaLabel": "User account",
+    "cartBtn": "Cart",
+    "cartBtnAriaLabel": "Shopping cart"
+  },
+  "nav": {
+    "allCategories": "All categories",
+    "electronics": "Electronics",
+    "home": "Home",
+    "fashion": "Fashion",
+    "beauty": "Beauty",
+    "sports": "Sports & leisure",
+    "dailyOffers": "Daily offers"
+  },
+  "hero": {
+    "eyebrow": "K-MART MARKET · TUNISIA",
+    "title": "Everything you love.<br><em>In one place.</em>",
+    "subtitle": "Discover thousands of products, compare offers and get delivery anywhere in Tunisia.",
+    "shopNow": "Shop now",
+    "trustPayment": "Cash on delivery",
+    "trustSellers": "Selected sellers"
+  },
+  "dailyCheckin": {
+    "eyebrow": "VISIT BONUS",
+    "title": "Your daily appointment",
+    "description": "Come back every day to keep your visit streak and unlock demo points.",
+    "streakLabel": "Streak: {count} day{plural}",
+    "points": "{count} pts",
+    "claimBtn": "Claim my bonus",
+    "claimedBtn": "Bonus claimed ✓",
+    "toastClaimed": "🎁 +10 demo points added!",
+    "toastAlreadyClaimed": "You've already claimed today's bonus."
+  },
+  "flashSale": {
+    "tag": "⚡ FLASH SALE",
+    "live": "LIMITED TIME",
+    "title": "Offers don't last forever.",
+    "description": "A selection of products at special prices — until the countdown ends.",
+    "countdownHours": "HOURS",
+    "countdownMinutes": "MINUTES",
+    "countdownSeconds": "SECONDS",
+    "ctaBtn": "View offers"
+  },
+  "benefits": {
+    "delivery": {
+      "icon": "🚚",
+      "title": "Delivery in Tunisia",
+      "subtitle": "Wherever you are"
+    },
+    "security": {
+      "icon": "🔒",
+      "title": "Shop with confidence",
+      "subtitle": "Secure journey"
+    },
+    "payment": {
+      "icon": "💳",
+      "title": "Flexible payment",
+      "subtitle": "Local options coming soon"
+    },
+    "support": {
+      "icon": "↩",
+      "title": "Customer support",
+      "subtitle": "We're here for you"
+    }
+  },
+  "products": {
+    "sectionTitle": "Our picks <span>right now</span>",
+    "eyebrow": "DON'T MISS",
+    "clearFilters": "View all",
+    "resultLabel": {
+      "all": "Popular products",
+      "category": "{category} · {count} product{plural}"
+    },
+    "sortLabel": "Sort by",
+    "sortOptions": {
+      "featured": "Recommended",
+      "low": "Price: low to high",
+      "high": "Price: high to low",
+      "newest": "Newest",
+      "topRated": "Top rated"
+    },
+    "emptyState": "No products match your search.",
+    "categories": {
+      "tech": {
+        "icon": "🎧",
+        "title": "High-tech",
+        "subtitle": "Connected essentials"
+      },
+      "home": {
+        "icon": "🪴",
+        "title": "Home & decor",
+        "subtitle": "Everyday comfort"
+      },
+      "fashion": {
+        "icon": "👟",
+        "title": "Fashion & accessories",
+        "subtitle": "Your style, your rules"
+      },
+      "beauty": {
+        "icon": "✨",
+        "title": "Beauty & care",
+        "subtitle": "Your little rituals"
+      }
+    },
+    "productCard": {
+      "rating": "★ ★ ★ ★ ★",
+      "addToCart": "Add to cart",
+      "viewDetails": "View details →",
+      "badges": {
+        "POPULAIRE": "POPULAR",
+        "NOUVEAU": "NEW",
+        "BEST-SELLER": "BEST-SELLER",
+        "TENDANCE": "TRENDING",
+        "PETIT PRIX": "LOW PRICE",
+        "COUP DE CŒUR": "FAVORITE",
+        "SÉLECTION": "SELECTION",
+        "-15%": "-15%"
+      }
+    },
+    "detailModal": {
+      "closeAriaLabel": "Close details",
+      "priceLabel": "Price",
+      "description": "Description",
+      "demoNote": "Illustrative photo. Price and availability for demo only.",
+      "addToCart": "Add to cart",
+      "continueShopping": "Continue shopping",
+      "reviewsTab": "Reviews ({count})",
+      "writeReview": "Write a review",
+      "noReviews": "No reviews yet. Be the first!",
+      "verifiedPurchase": "Verified purchase",
+      "helpful": "Helpful ({count})"
+    }
+  },
+  "sellerBanner": {
+    "eyebrow": "ARE YOU A SELLER?",
+    "title": "Grow your business<br>with K-mart Market.",
+    "description": "Showcase your products to new customers across Tunisia.",
+    "ctaBtn": "Discover seller space →"
+  },
+  "newsletter": {
+    "title": "Good deals delivered to your inbox.",
+    "description": "Get new arrivals and selected offers.",
+    "placeholder": "Your email address",
+    "submitBtn": "Subscribe",
+    "successTitle": "Thanks for your interest!",
+    "successMessage": "Newsletter signup is simulated in this preview. No data was sent."
+  },
+  "footer": {
+    "discover": "Discover",
+    "allProducts": "All products",
+    "dailyOffers": "Daily offers",
+    "categories": "Categories",
+    "help": "Need help?",
+    "helpCenter": "Help center",
+    "shippingReturns": "Shipping & returns",
+    "contact": "Contact us",
+    "follow": "Follow K-mart",
+    "copyright": "© 2026 K-mart Market Tunisia · UI Preview"
+  },
+  "cart": {
+    "title": "My Cart",
+    "closeAriaLabel": "Close cart",
+    "empty": "Your cart is empty.<br><br>Add some products to get started!",
+    "subtotal": "Subtotal",
+    "shippingNote": "Shipping fees will be calculated at the next step.",
+    "checkoutBtn": "Continue",
+    "demoNote": "Demo preview — no real orders.",
+    "removeAriaLabel": "Remove from cart",
+    "qtyDecrease": "Decrease quantity",
+    "qtyIncrease": "Increase quantity"
+  },
+  "checkout": {
+    "step1": "Cart",
+    "step2": "Shipping",
+    "step3": "Payment",
+    "step4": "Confirm",
+    "shippingTitle": "Shipping Address",
+    "shippingSubtitle": "Where should we send your order?",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone",
+    "address": "Address",
+    "city": "City/Governorate",
+    "postalCode": "Postal code",
+    "saveAddress": "Save this address",
+    "paymentTitle": "Payment Method",
+    "paymentSubtitle": "How would you like to pay?",
+    "paymentMethods": {
+      "cod": {
+        "label": "Cash on delivery",
+        "description": "Pay in cash when delivered"
+      },
+      "card": {
+        "label": "Bank card (demo)",
+        "description": "Visa, Mastercard, CIB — simulation only"
+      },
+      "mobile": {
+        "label": "Mobile payment (demo)",
+        "description": "Flouci, D17, e-Dinar — simulation only"
+      }
+    },
+    "reviewTitle": "Order Summary",
+    "termsLabel": "I accept the terms and conditions",
+    "placeOrder": "Place order",
+    "successTitle": "Order confirmed!",
+    "successMessage": "Your order #{orderId} has been placed successfully. A confirmation email will be sent.",
+    "orderNumber": "Order number"
+  },
+  "wishlist": {
+    "title": "My Wishlist",
+    "closeAriaLabel": "Close wishlist",
+    "empty": "Your wishlist is empty.<br><br>Add products by clicking the heart!",
+    "addAriaLabel": "Add to wishlist",
+    "removeAriaLabel": "Remove from wishlist",
+    "toastAdded": "Added to your wishlist ❤️",
+    "toastRemoved": "Removed from your wishlist"
+  },
+  "recentlyViewed": {
+    "title": "Recently Viewed",
+    "empty": "No recently viewed products.",
+    "clearHistory": "Clear history",
+    "clearConfirm": "Are you sure you want to clear your viewing history?"
+  },
+  "filters": {
+    "title": "Filters",
+    "closeAriaLabel": "Close filters",
+    "priceRange": "Price range",
+    "minPrice": "Min (TND)",
+    "maxPrice": "Max (TND)",
+    "rating": "Minimum rating",
+    "brands": "Brands",
+    "availability": "Availability",
+    "inStock": "In stock",
+    "onSale": "On sale",
+    "clearAll": "Clear all",
+    "apply": "Apply ({count})",
+    "resultsCount": "{count} product{plural} found"
+  },
+  "sellerDashboard": {
+    "title": "Seller Dashboard",
+    "tabs": {
+      "overview": "Overview",
+      "products": "My Products",
+      "orders": "Orders",
+      "analytics": "Analytics",
+      "settings": "Settings"
+    },
+    "stats": {
+      "revenue": "Revenue",
+      "orders": "Orders",
+      "products": "Active Products",
+      "rating": "Avg Rating"
+    },
+    "recentOrders": "Recent Orders",
+    "noOrders": "No orders yet.",
+    "productsTable": {
+      "name": "Product",
+      "price": "Price",
+      "stock": "Stock",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "outOfStock": "Out of Stock"
+    },
+    "addProduct": "Add Product",
+    "editProduct": "Edit",
+    "deleteProduct": "Delete"
+  },
+  "auth": {
+    "loginTitle": "Sign In",
+    "registerTitle": "Create Account",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Full Name",
+    "phone": "Phone (optional)",
+    "loginBtn": "Sign In",
+    "registerBtn": "Create Account",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "demoNote": "Demo mode — no real authentication."
+  },
+  "reviews": {
+    "title": "Customer Reviews",
+    "rating": "Rating",
+    "writeReview": "Write a Review",
+    "yourRating": "Your Rating",
+    "reviewTitle": "Review Title",
+    "reviewContent": "Your Review",
+    "submitBtn": "Submit Review",
+    "loginToReview": "Sign in to leave a review",
+    "verifiedPurchase": "Verified Purchase",
+    "helpful": "Was this review helpful?",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "install": {
+    "nudgeTitle": "Install K-mart Market",
+    "nudgeSubtitle": "Faster access to your deals",
+    "nudgeBtn": "Install",
+    "modalTitle": "Install K-mart Market",
+    "modalSubtitle": "Add the shop to your home screen or desktop to find it like an app.",
+    "platformNote": "On mobile or Windows, use your browser's install button if available.",
+    "installBtn": "Install App",
+    "laterBtn": "Maybe later",
+    "successToast": "K-mart Market has been installed!",
+    "instructions": {
+      "default": "Open your browser menu and choose \"Install App\" or \"Add to Home Screen\". On Windows, look for the install icon in the address bar.",
+      "ios": "On iPhone/iPad: tap Share in Safari, then \"Add to Home Screen\". iOS doesn't offer the same install button as Chrome.",
+      "android": "On Android: open Chrome's ⋮ menu, then \"Install App\" or \"Add to Home Screen\".",
+      "windows": "On Windows: in Edge or Chrome, use the Install icon in the address bar, or browser menu → Install this app."
+    }
+  },
+  "toast": {
+    "addedToCart": "Product added to cart",
+    "removedFromCart": "Product removed from cart",
+    "checkoutDemo": "Cart is interactive, but checkout and real orders will be integrated in the Worker + KV version."
+  },
+  "modals": {
+    "demoTitle": "Demo Preview",
+    "demoText": "This feature will be connected in the next version.",
+    "okBtn": "Got it",
+    "languageTitle": "Languages",
+    "languageText": "This preview is currently in English. The next version will add French and Arabic with RTL support.",
+    "accountTitle": "Customer Area",
+    "accountText": "Login, registration and order tracking will be integrated in the functional version.",
+    "sellerTitle": "Seller Space",
+    "sellerText": "Seller and catalog management will be developed in the Worker + KV version."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "yes": "Yes",
+    "no": "No",
+    "required": "Required field",
+    "optional": "Optional"
+  },
+  "accessibility": {
+    "skipToMain": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "expandSection": "Expand section",
+    "collapseSection": "Collapse section",
+    "selected": "Selected",
+    "notSelected": "Not selected",
+    "currentPage": "Current page",
+    "page": "Page",
+    "of": "of"
+  }
+}

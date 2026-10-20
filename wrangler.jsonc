@@ -1,0 +1,88 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kmart-market-tunisia",
+  "main": "worker/index.js",
+  "compatibility_date": "2024-12-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "pages_build_output_dir": "./",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "KmartProducts",
+      "id": "kmart-products-kv-id",
+      "preview_id": "kmart-products-kv-preview-id"
+    },
+    {
+      "binding": "KmartUsers",
+      "id": "kmart-users-kv-id",
+      "preview_id": "kmart-users-kv-preview-id"
+    },
+    {
+      "binding": "KmartOrders",
+      "id": "kmart-orders-kv-id",
+      "preview_id": "kmart-orders-kv-preview-id"
+    },
+    {
+      "binding": "KmartSellers",
+      "id": "kmart-sellers-kv-id",
+      "preview_id": "kmart-sellers-kv-preview-id"
+    },
+    {
+      "binding": "KmartReviews",
+      "id": "kmart-reviews-kv-id",
+      "preview_id": "kmart-reviews-kv-preview-id"
+    },
+    {
+      "binding": "KmartConfig",
+      "id": "kmart-config-kv-id",
+      "preview_id": "kmart-config-kv-preview-id"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "APP_NAME": "K-mart Market Tunisia",
+    "DEFAULT_LANGUAGE": "fr",
+    "SUPPORTED_LANGUAGES": "fr,ar,en",
+    "CURRENCY": "TND",
+    "CURRENCY_LOCALE": "fr-TN",
+    "MAX_WISHLIST_ITEMS": "100",
+    "MAX_RECENTLY_VIEWED": "20",
+    "CACHE_TTL_STATIC": "31536000",
+    "CACHE_TTL_API": "60",
+    "CACHE_TTL_IMAGES": "2592000"
+  },
+  "triggers": {
+    "crons": [
+      "0 3 * * *"
+    ]
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1
+  },
+  "limits": {
+    "cpu_ms": 10,
+    "memory_mb": 128
+  },
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["**/*.{html,css,js,json,webmanifest,txt,md}"]
+    },
+    {
+      "type": "Data",
+      "globs": ["**/*.{png,jpg,jpeg,gif,svg,webp,avif,ico,woff,woff2}"]
+    }
+  ],
+  "routes": [
+    { "pattern": "kmart-market-tunisia.pages.dev/*", "zone_name": "pages.dev" }
+  ],
+  "dispatch_namespaces": [],
+  "services": [],
+  "durable_objects": {},
+  "migrations": [],
+  "tail_consumers": []
+}
