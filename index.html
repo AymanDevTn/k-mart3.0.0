@@ -1,55 +1,81 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#1168B3" />
+  <meta name="description" content="K-mart Market Tunisia — marketplace en ligne : produits, panier, wishlist, avis clients et paiement à la livraison." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="K-mart.tn" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="apple-touch-icon" href="/assets/app-icon-192.png" />
-  <meta name="description" content="K-mart Market Tunisia — maquette interactive de la boutique en ligne." />
+  <link rel="icon" href="/assets/app-icon-192.png" />
   <title>K-mart Market Tunisia — UI Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/assets/styles-v23.css" />
 </head>
 <body>
-  <div class="announcement">🇹🇳 La marketplace tunisienne pour tout ce dont vous avez besoin</div>
-  <header class="site-header">
+  <div class="announcement" data-i18n="app.tagline">La marketplace tunisienne pour tout ce dont vous avez besoin</div>
+
+  <header class="site-header" role="banner">
     <a class="brand brand-image" href="#" aria-label="K-mart Market accueil"><img src="/assets/kmart-brand-identity.png" alt="K-mart.tn — Market for everything" /></a>
-    <form class="search" id="searchForm">
-      <input id="searchInput" type="search" placeholder="Rechercher un produit, une marque..." aria-label="Rechercher" />
-      <button type="submit" aria-label="Rechercher">⌕</button>
+
+    <form class="search" id="searchForm" role="search">
+      <label class="sr-only" for="searchInput" data-i18n="header.searchAriaLabel">Rechercher</label>
+      <input id="searchInput" type="search" placeholder="Rechercher un produit, une marque..." data-i18n-attr="placeholder:header.searchPlaceholder" aria-label="Rechercher" autocomplete="off" />
+      <button type="submit" aria-label="Rechercher" data-i18n-attr="aria-label:header.searchAriaLabel">&#9906;</button>
     </form>
+
     <div class="header-actions">
-      <button class="icon-button" id="languageBtn" title="Changer de langue">FR⌄</button>
-      <button class="icon-button" id="accountBtn" title="Compte">♙ <span>Compte</span></button>
-      <button class="cart-button" id="cartOpen">🛒 <span>Panier</span><b id="cartCount">0</b></button>
+      <div class="lang-wrap">
+        <button class="icon-button" id="languageBtn" title="Changer de langue" aria-haspopup="menu" aria-expanded="false" data-i18n-attr="aria-label:header.languageBtnAriaLabel">FR&#9660;</button>
+      </div>
+      <button class="icon-button" id="accountBtn" title="Compte" data-i18n-attr="aria-label:header.accountBtnAriaLabel">&#9790; <span data-i18n="header.accountBtn">Compte</span></button>
+      <button class="icon-button wishlist-button" id="wishlistOpen" title="Liste d'envies" data-i18n-attr="aria-label:wishlist.title">
+        &#9829; <span data-i18n="wishlist.title">Ma liste d'envies</span><b id="wishlistCount" hidden>0</b>
+      </button>
+      <button class="cart-button" id="cartOpen" data-i18n-attr="aria-label:header.cartBtnAriaLabel">&#128722; <span data-i18n="header.cartBtn">Panier</span><b id="cartCount">0</b></button>
     </div>
   </header>
 
-  <div class="install-nudge" id="installNudge" role="status"><span class="install-nudge-icon">↥</span><span><b>Installez K-mart Market</b><small>Accédez plus vite à vos bonnes affaires</small></span><button id="installNudgeBtn">Installer</button><button class="nudge-close" id="installNudgeClose" aria-label="Fermer">×</button></div>
-  <nav class="category-nav" aria-label="Catégories">
-    <button class="nav-category active" data-category="Tous">☰ Toutes les catégories</button>
-    <button class="nav-category" data-category="Électronique">Électronique</button>
-    <button class="nav-category" data-category="Maison">Maison</button>
-    <button class="nav-category" data-category="Mode">Mode</button>
-    <button class="nav-category" data-category="Beauté">Beauté</button>
-    <button class="nav-category" data-category="Sport">Sport & loisirs</button>
-    <span class="nav-promo">Offres du jour <b>→</b></span>
+  <div class="install-nudge" id="installNudge" role="status">
+    <span class="install-nudge-icon" aria-hidden="true">&#8597;</span>
+    <span><b data-i18n="install.nudgeTitle">Installez K-mart Market</b><small data-i18n="install.nudgeSubtitle">Accédez plus vite à vos bonnes affaires</small></span>
+    <button id="installNudgeBtn" data-i18n="install.nudgeBtn">Installer</button>
+    <button class="nudge-close" id="installNudgeClose" aria-label="Fermer">&#215;</button>
+  </div>
+
+  <nav class="category-nav" id="categoryNav" aria-label="Catégories">
+    <button class="nav-category active" data-category="Tous">☰ <span data-i18n="nav.allCategories">Toutes les catégories</span></button>
+    <button class="nav-category" data-category="Électronique" data-i18n="nav.electronics">Électronique</button>
+    <button class="nav-category" data-category="Maison" data-i18n="nav.home">Maison</button>
+    <button class="nav-category" data-category="Mode" data-i18n="nav.fashion">Mode</button>
+    <button class="nav-category" data-category="Beauté" data-i18n="nav.beauty">Beauté</button>
+    <button class="nav-category" data-category="Sport" data-i18n="nav.sports">Sport & loisirs</button>
+    <span class="nav-promo"><span data-i18n="nav.dailyOffers">Offres du jour</span> <b>&#8594;</b></span>
   </nav>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
       <div class="hero-copy">
-        <span class="eyebrow">K-MART MARKET · TUNISIE</span>
-        <h1>Tout ce que vous aimez.<br><em>Au même endroit.</em></h1>
-        <p>Découvrez des milliers de produits, comparez les offres et faites-vous livrer partout en Tunisie.</p>
-        <button class="primary-button" id="shopNow">Découvrir les produits <span>→</span></button>
-        <div class="hero-trust"><span>✓ Paiement à la livraison</span><span>✓ Vendeurs sélectionnés</span></div>
+        <span class="eyebrow" data-i18n="hero.eyebrow">K-MART MARKET · TUNISIE</span>
+        <h1 data-i18n="hero.title">Tout ce que vous aimez.<br><em>Au même endroit.</em></h1>
+        <p data-i18n="hero.subtitle">Découvrez des milliers de produits, comparez les offres et faites-vous livrer partout en Tunisie.</p>
+        <button class="primary-button" id="shopNow"><span data-i18n="hero.shopNow">Découvrir les produits</span> <span aria-hidden="true">&#8594;</span></button>
+        <div class="hero-trust">
+          <span data-i18n="hero.trustPayment">Paiement à la livraison</span>
+          <span data-i18n="hero.trustSellers">Vendeurs sélectionnés</span>
+        </div>
       </div>
-      <div class="hero-art" aria-label="Illustration promotionnelle">
+      <div class="hero-art" aria-hidden="true">
         <div class="hero-circle"></div>
-        <div class="float-card card-one"><span>🎧</span><small>Tech & audio</small></div>
-        <div class="float-card card-two"><span>🏡</span><small>Maison</small></div>
-        <div class="float-card card-three"><span>👟</span><small>Style</small></div>
+        <div class="float-card card-one"><span>&#127911;</span><small>Tech & audio</small></div>
+        <div class="float-card card-two"><span>&#127968;</span><small>Maison</small></div>
+        <div class="float-card card-three"><span>&#128095;</span><small>Style</small></div>
         <div class="hero-bag">K<span>-mart</span><small>market</small></div>
         <div class="sale-sticker">BONNES<br><b>OFFRES</b></div>
       </div>
@@ -57,74 +83,309 @@
 
     <section class="daily-promo-row" aria-label="Récompense de visite et promotion limitée">
       <article class="daily-checkin" id="dailyCheckinCard">
-        <div class="daily-icon">🎁</div><div class="daily-copy"><span class="eyebrow">BONUS DE VISITE</span><h2>Votre rendez-vous quotidien</h2><p>Revenez chaque jour pour garder votre série de visites et débloquer des points démo.</p><div class="streak-days" id="streakDays"><span>J1</span><span>J2</span><span>J3</span><span>J4</span><span>J5</span><span>J6</span><span>J7</span></div></div>
-        <div class="daily-claim"><b><span id="pointsValue">0</span> pts</b><small id="streakLabel">Série : 0 jour</small><button id="dailyClaimBtn" class="primary-button">Récupérer mon bonus</button></div>
+        <div class="daily-icon" aria-hidden="true">&#127873;</div>
+        <div class="daily-copy">
+          <span class="eyebrow" data-i18n="dailyCheckin.eyebrow">BONUS DE VISITE</span>
+          <h2 data-i18n="dailyCheckin.title">Votre rendez-vous quotidien</h2>
+          <p data-i18n="dailyCheckin.description">Revenez chaque jour pour garder votre série de visites et débloquer des points démo.</p>
+          <div class="streak-days" id="streakDays" aria-label="Série de visites"><span>J1</span><span>J2</span><span>J3</span><span>J4</span><span>J5</span><span>J6</span><span>J7</span></div>
+        </div>
+        <div class="daily-claim">
+          <b><span id="pointsValue" data-points="0">0</span> <span data-i18n="dailyCheckin.points">pts</span></b>
+          <small id="streakLabel" data-streak="0">Série : 0 jour</small>
+          <button id="dailyClaimBtn" class="primary-button" data-i18n="dailyCheckin.claimBtn">Récupérer mon bonus</button>
+        </div>
       </article>
       <article class="flash-sale">
-        <div class="flash-top"><span class="flash-tag">⚡ OFFRE FLASH</span><span class="flash-live"><i></i> TEMPS LIMITÉ</span></div>
-        <h2>Les offres ne durent pas éternellement.</h2><p>Une sélection de produits à prix spécial — jusqu'à la fin du compte à rebours.</p>
-        <div class="countdown" aria-label="Compte à rebours de la promotion"><div><b id="countHours">05</b><small>HEURES</small></div><span>:</span><div><b id="countMinutes">00</b><small>MINUTES</small></div><span>:</span><div><b id="countSeconds">00</b><small>SECONDES</small></div></div>
-        <button class="flash-cta" id="flashShopBtn">Voir les offres <span>→</span></button>
+        <div class="flash-top">
+          <span class="flash-tag" data-i18n="flashSale.tag">⚡ OFFRE FLASH</span>
+          <span class="flash-live"><i aria-hidden="true"></i> <span data-i18n="flashSale.live">TEMPS LIMITÉ</span></span>
+        </div>
+        <h2 data-i18n="flashSale.title">Les offres ne durent pas éternellement.</h2>
+        <p data-i18n="flashSale.description">Une sélection de produits à prix spécial — jusqu'à la fin du compte à rebours.</p>
+        <div class="countdown" role="timer" aria-label="Compte à rebours de la promotion">
+          <div><b id="countHours">05</b><small data-i18n="flashSale.countdownHours">HEURES</small></div>
+          <span aria-hidden="true">:</span>
+          <div><b id="countMinutes">00</b><small data-i18n="flashSale.countdownMinutes">MINUTES</small></div>
+          <span aria-hidden="true">:</span>
+          <div><b id="countSeconds">00</b><small data-i18n="flashSale.countdownSeconds">SECONDES</small></div>
+        </div>
+        <button class="flash-cta" id="flashShopBtn"><span data-i18n="flashSale.ctaBtn">Voir les offres</span> <span aria-hidden="true">&#8594;</span></button>
       </article>
     </section>
 
-    <section class="benefits">
-      <div><span class="benefit-icon">🚚</span><p><b>Livraison en Tunisie</b><small>Partout où vous êtes</small></p></div>
-      <div><span class="benefit-icon">🔒</span><p><b>Achats en confiance</b><small>Parcours sécurisé</small></p></div>
-      <div><span class="benefit-icon">💳</span><p><b>Paiement flexible</b><small>Options locales à venir</small></p></div>
-      <div><span class="benefit-icon">↩</span><p><b>Support client</b><small>Nous sommes là pour vous</small></p></div>
+    <section class="benefits" aria-label="Avantages">
+      <div><span class="benefit-icon" aria-hidden="true">&#128666;</span><p><b data-i18n="benefits.delivery.title">Livraison en Tunisie</b><small data-i18n="benefits.delivery.subtitle">Partout où vous êtes</small></p></div>
+      <div><span class="benefit-icon" aria-hidden="true">&#128274;</span><p><b data-i18n="benefits.security.title">Achats en confiance</b><small data-i18n="benefits.security.subtitle">Parcours sécurisé</small></p></div>
+      <div><span class="benefit-icon" aria-hidden="true">&#128179;</span><p><b data-i18n="benefits.payment.title">Paiement flexible</b><small data-i18n="benefits.payment.subtitle">Options locales à venir</small></p></div>
+      <div><span class="benefit-icon" aria-hidden="true">&#8629;</span><p><b data-i18n="benefits.support.title">Support client</b><small data-i18n="benefits.support.subtitle">Nous sommes là pour vous</small></p></div>
     </section>
 
     <section class="section" id="products">
       <div class="section-heading">
-        <div><span class="eyebrow">À NE PAS MANQUER</span><h2>Nos sélections <span>du moment</span></h2></div>
-        <button class="text-button" id="clearFilters">Voir tout <span>→</span></button>
+        <div>
+          <span class="eyebrow" data-i18n="products.eyebrow">À NE PAS MANQUER</span>
+          <h2 data-i18n="products.sectionTitle">Nos sélections <span>du moment</span></h2>
+        </div>
+        <button class="text-button" id="clearFilters"><span data-i18n="products.clearFilters">Voir tout</span> <span aria-hidden="true">&#8594;</span></button>
       </div>
+
       <div class="category-tiles">
-        <button class="category-tile tile-tech" data-category="Électronique"><span>🎧</span><b>High-tech</b><small>Les essentiels connectés</small></button>
-        <button class="category-tile tile-home" data-category="Maison"><span>🪴</span><b>Maison & déco</b><small>Le confort au quotidien</small></button>
-        <button class="category-tile tile-fashion" data-category="Mode"><span>👟</span><b>Mode & accessoires</b><small>Votre style, vos règles</small></button>
-        <button class="category-tile tile-beauty" data-category="Beauté"><span>✨</span><b>Beauté & soin</b><small>Vos petits rituels</small></button>
+        <button class="category-tile tile-tech" data-category="Électronique">
+          <span aria-hidden="true">&#127911;</span><b data-i18n="products.categories.tech.title">High-tech</b><small data-i18n="products.categories.tech.subtitle">Les essentiels connectés</small>
+        </button>
+        <button class="category-tile tile-home" data-category="Maison">
+          <span aria-hidden="true">&#129717;</span><b data-i18n="products.categories.home.title">Maison & déco</b><small data-i18n="products.categories.home.subtitle">Le confort au quotidien</small>
+        </button>
+        <button class="category-tile tile-fashion" data-category="Mode">
+          <span aria-hidden="true">&#128095;</span><b data-i18n="products.categories.fashion.title">Mode & accessoires</b><small data-i18n="products.categories.fashion.subtitle">Votre style, vos règles</small>
+        </button>
+        <button class="category-tile tile-beauty" data-category="Beauté">
+          <span aria-hidden="true">&#10024;</span><b data-i18n="products.categories.beauty.title">Beauté & soin</b><small data-i18n="products.categories.beauty.subtitle">Vos petits rituels</small>
+        </button>
       </div>
-      <div class="product-toolbar"><span id="resultLabel">Produits populaires</span><label>Trier par <select id="sortSelect"><option value="featured">Recommandés</option><option value="low">Prix croissant</option><option value="high">Prix décroissant</option></select></label></div>
-      <div class="product-grid" id="productGrid"></div>
+
+      <div class="product-toolbar">
+        <span id="resultLabel">Produits populaires</span>
+        <div class="toolbar-controls">
+          <button class="filter-button" id="filterOpen" aria-haspopup="dialog" aria-controls="filterDrawer">
+            <span aria-hidden="true">&#9776;</span> <span data-i18n="common.filter">Filtrer</span><b id="filterCount" hidden>0</b>
+          </button>
+          <label><span data-i18n="products.sortLabel">Trier par</span>
+            <select id="sortSelect">
+              <option value="featured" data-i18n="products.sortOptions.featured">Recommandés</option>
+              <option value="low" data-i18n="products.sortOptions.low">Prix croissant</option>
+              <option value="high" data-i18n="products.sortOptions.high">Prix décroissant</option>
+              <option value="newest" data-i18n="products.sortOptions.newest">Plus récents</option>
+              <option value="topRated" data-i18n="products.sortOptions.topRated">Mieux notés</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
       <div class="empty-state" id="emptyState" hidden>Aucun produit ne correspond à votre recherche.</div>
     </section>
 
+    <section class="section recent-section" id="recentlyViewedSection" hidden aria-labelledby="recentTitle">
+      <div class="section-heading">
+        <div><span class="eyebrow">&#128065;</span><h2 id="recentTitle" data-i18n="recentlyViewed.title">Produits consultés récemment</h2></div>
+        <button class="text-button" id="clearRecent"><span data-i18n="recentlyViewed.clearHistory">Effacer l'historique</span></button>
+      </div>
+      <div class="mini-rail" id="recentlyViewedRail"></div>
+    </section>
+
     <section class="seller-banner">
-      <div><span class="eyebrow">VOUS ÊTES VENDEUR ?</span><h2>Développez votre activité<br>avec K-mart Market.</h2><p>Présentez vos produits à de nouveaux clients partout en Tunisie.</p></div>
-      <button class="light-button" id="sellerBtn">Découvrir l'espace vendeur →</button>
-      <div class="seller-graphic">📦</div>
+      <div>
+        <span class="eyebrow" data-i18n="sellerBanner.eyebrow">VOUS ÊTES VENDEUR ?</span>
+        <h2 data-i18n="sellerBanner.title">Développez votre activité<br>avec K-mart Market.</h2>
+        <p data-i18n="sellerBanner.description">Présentez vos produits à de nouveaux clients partout en Tunisie.</p>
+      </div>
+      <button class="light-button" id="sellerBtn"><span data-i18n="sellerBanner.ctaBtn">Découvrir l'espace vendeur</span> &#8594;</button>
+      <div class="seller-graphic" aria-hidden="true">&#128230;</div>
     </section>
 
     <section class="newsletter">
-      <div><h2>Les bonnes affaires arrivent dans votre boîte mail.</h2><p>Recevez les nouveautés et les offres sélectionnées.</p></div>
-      <form id="newsletterForm"><input type="email" placeholder="Votre adresse e-mail" required aria-label="Adresse e-mail"><button class="primary-button">S'inscrire</button></form>
+      <div>
+        <h2 data-i18n="newsletter.title">Les bonnes affaires arrivent dans votre boîte mail.</h2>
+        <p data-i18n="newsletter.description">Recevez les nouveautés et les offres sélectionnées.</p>
+      </div>
+      <form id="newsletterForm">
+        <label class="sr-only" for="newsletterEmail" data-i18n="newsletter.placeholder">Votre adresse e-mail</label>
+        <input id="newsletterEmail" type="email" name="email" placeholder="Votre adresse e-mail" data-i18n-attr="placeholder:newsletter.placeholder" required autocomplete="email" />
+        <button class="primary-button" data-i18n="newsletter.submitBtn">S'inscrire</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    <div class="footer-brand"><a class="brand brand-image" href="#"><img src="/assets/kmart-brand-identity.png" alt="K-mart.tn — Market for everything" /></a><p>Votre marketplace, à votre rythme.</p></div>
-    <div><b>Découvrir</b><a href="#products">Tous les produits</a><a href="#products">Offres du jour</a><a href="#products">Catégories</a></div>
-    <div><b>Besoin d'aide ?</b><a href="#" class="demo-link">Centre d'aide</a><a href="#" class="demo-link">Livraison & retours</a><a href="#" class="demo-link">Nous contacter</a></div>
-    <div><b>Suivez K-mart</b><p class="socials">◎　f　▶</p><small>© 2026 K-mart Market Tunisia · Maquette UI</small></div>
+    <div class="footer-brand">
+      <a class="brand brand-image" href="#"><img src="/assets/kmart-brand-identity.png" alt="K-mart.tn — Market for everything" /></a>
+      <p data-i18n="app.tagline">Votre marketplace, à votre rythme.</p>
+    </div>
+    <div>
+      <b data-i18n="footer.discover">Découvrir</b>
+      <a href="#products" data-i18n="footer.allProducts">Tous les produits</a>
+      <a href="#products" data-i18n="footer.dailyOffers">Offres du jour</a>
+      <a href="#products" data-i18n="footer.categories">Catégories</a>
+    </div>
+    <div>
+      <b data-i18n="footer.help">Besoin d'aide ?</b>
+      <a href="#" class="demo-link" data-i18n="footer.helpCenter">Centre d'aide</a>
+      <a href="#" class="demo-link" data-i18n="footer.shippingReturns">Livraison & retours</a>
+      <a href="#" class="demo-link" data-i18n="footer.contact">Nous contacter</a>
+    </div>
+    <div>
+      <b data-i18n="footer.follow">Suivez K-mart</b>
+      <p class="socials" aria-label="Réseaux sociaux">◎　f　▶</p>
+      <small data-i18n="footer.copyright">© 2026 K-mart Market Tunisia · Maquette UI</small>
+    </div>
   </footer>
 
-  <div class="toast" id="toast" role="status"></div>
-  <div class="install-modal" id="installModal" role="dialog" aria-modal="true" aria-labelledby="installTitle">
-    <button class="close-button install-modal-close" id="installModalClose" aria-label="Fermer">×</button><div class="install-hero-icon">↥</div><span class="eyebrow">VOTRE BOUTIQUE, À PORTÉE DE CLIC</span><h2 id="installTitle">Installez K-mart Market</h2><p>Ajoutez la boutique à votre écran d'accueil ou au bureau de votre ordinateur pour la retrouver comme une application.</p><div class="install-platform-note" id="installPlatformNote">Sur mobile ou Windows, utilisez le bouton d'installation de votre navigateur si disponible.</div><button class="primary-button install-main-btn" id="installMainBtn">Installer l'application <span>→</span></button><button class="install-later" id="installLaterBtn">Peut-être plus tard</button></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Install modal -->
+  <div class="install-modal" id="installModal" role="dialog" aria-modal="true" aria-labelledby="installTitle" aria-hidden="true">
+    <button class="close-button install-modal-close" id="installModalClose" aria-label="Fermer">&#215;</button>
+    <div class="install-hero-icon" aria-hidden="true">&#8597;</div>
+    <span class="eyebrow">K-MART MARKET</span>
+    <h2 id="installTitle" data-i18n="install.modalTitle">Installez K-mart Market</h2>
+    <p data-i18n="install.modalSubtitle">Ajoutez la boutique à votre écran d'accueil ou au bureau de votre ordinateur pour la retrouver comme une application.</p>
+    <div class="install-platform-note" id="installPlatformNote" data-i18n="install.platformNote">Sur mobile ou Windows, utilisez le bouton d'installation de votre navigateur si disponible.</div>
+    <button class="primary-button install-main-btn" id="installMainBtn"><span data-i18n="install.installBtn">Installer l'application</span> <span aria-hidden="true">&#8594;</span></button>
+    <button class="install-later" id="installLaterBtn" data-i18n="install.laterBtn">Peut-être plus tard</button>
+  </div>
+
   <div class="overlay" id="overlay"></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Panier" aria-hidden="true">
-    <div class="drawer-heading"><div><span class="eyebrow">VOTRE SÉLECTION</span><h2>Mon panier</h2></div><button id="cartClose" class="close-button" aria-label="Fermer">×</button></div>
+
+  <!-- Cart drawer -->
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Panier" aria-hidden="true">
+    <div class="drawer-heading">
+      <div><span class="eyebrow">VOTRE SÉLECTION</span><h2 data-i18n="cart.title">Mon panier</h2></div>
+      <button id="cartClose" class="close-button" aria-label="Fermer le panier">&#215;</button>
+    </div>
     <div id="cartItems" class="cart-items"></div>
-    <div class="cart-bottom"><div class="total-row"><span>Sous-total</span><b id="cartTotal">0,000 TND</b></div><p>Les frais de livraison seront calculés à l'étape suivante.</p><button class="primary-button full-button" id="checkoutBtn">Continuer <span>→</span></button><small>Maquette de démonstration — aucune commande réelle.</small></div>
+    <div class="cart-bottom">
+      <div class="total-row"><span data-i18n="cart.subtotal">Sous-total</span><b id="cartTotal">0,000 TND</b></div>
+      <p data-i18n="cart.shippingNote">Les frais de livraison seront calculés à l'étape suivante.</p>
+      <button class="primary-button full-button" id="checkoutBtn"><span data-i18n="cart.checkoutBtn">Continuer</span> <span aria-hidden="true">&#8594;</span></button>
+      <small data-i18n="cart.demoNote">Maquette de démonstration — aucune commande réelle.</small>
+    </div>
   </aside>
 
-<div class="product-detail-modal" id="productDetailModal" role="dialog" aria-modal="true"><div class="product-detail-panel"><button class="close-button product-detail-close" id="productDetailClose">×</button><img id="productDetailImage" alt=""><div class="product-detail-copy"><h2 id="productDetailTitle">Détails du produit</h2><div id="productDetailPrice" class="product-detail-price"></div><p id="productDetailDescription"></p><p class="product-demo-note">Photo illustrative. Prix et disponibilité de démonstration.</p><button class="primary-button" id="productDetailAdd">Ajouter au panier</button><button id="productDetailDone" class="product-detail-done">Continuer mes achats</button></div></div></div>
-  <div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <button class="close-button modal-close" id="modalClose" aria-label="Fermer">×</button>
-    <span class="modal-icon">✦</span><h2 id="modalTitle">Aperçu de démonstration</h2><p id="modalText">Cette fonctionnalité sera connectée dans la prochaine version.</p><button class="primary-button" id="modalOk">Compris</button>
+  <!-- Wishlist drawer -->
+  <aside class="cart-drawer wishlist-drawer" id="wishlistDrawer" role="dialog" aria-modal="true" aria-label="Liste d'envies" aria-hidden="true">
+    <div class="drawer-heading">
+      <div><span class="eyebrow">&#9829;</span><h2 data-i18n="wishlist.title">Ma liste d'envies</h2></div>
+      <button id="wishlistClose" class="close-button" aria-label="Fermer la liste d'envies">&#215;</button>
+    </div>
+    <div id="wishlistItems" class="cart-items"></div>
+    <div class="cart-bottom">
+      <button class="primary-button full-button" id="wishlistAddAll"><span data-i18n="cart.checkoutBtn">Tout ajouter au panier</span> &#8594;</button>
+      <small data-i18n="cart.demoNote">Maquette de démonstration — aucune commande réelle.</small>
+    </div>
+  </aside>
+
+  <!-- Filters drawer -->
+  <aside class="cart-drawer filter-drawer" id="filterDrawer" role="dialog" aria-modal="true" aria-label="Filtres" aria-hidden="true">
+    <div class="drawer-heading">
+      <div><span class="eyebrow">&#9776;</span><h2 data-i18n="filters.title">Filtres</h2></div>
+      <button id="filterClose" class="close-button" aria-label="Fermer les filtres">&#215;</button>
+    </div>
+    <div id="filterBody" class="filter-body"></div>
+    <div class="cart-bottom filter-footer">
+      <button class="text-button" id="filterClear" data-i18n="filters.clearAll">Tout effacer</button>
+      <button class="primary-button full-button" id="filterApply" data-i18n="filters.apply">Appliquer</button>
+    </div>
+  </aside>
+
+  <!-- Product detail modal -->
+  <div class="product-detail-modal" id="productDetailModal" role="dialog" aria-modal="true" aria-labelledby="productDetailTitle" aria-hidden="true">
+    <div class="product-detail-panel">
+      <button class="close-button product-detail-close" id="productDetailClose" aria-label="Fermer les détails">&#215;</button>
+      <div class="product-detail-media">
+        <img id="productDetailImage" alt="" />
+        <button class="wishlist-btn detail-wishlist" id="productDetailWish" aria-pressed="false" aria-label="Ajouter à la liste d'envies">&#9825;</button>
+      </div>
+      <div class="product-detail-copy">
+        <h2 id="productDetailTitle">Détails du produit</h2>
+        <div id="productDetailPrice" class="product-detail-price"></div>
+        <p id="productDetailStock" class="stock-line"></p>
+        <div class="detail-tabs" id="productDetailTabs" role="tablist">
+          <button class="active" role="tab" data-detail-tab="description" aria-selected="true" id="tab-description" aria-controls="panel-description" data-i18n="products.detailModal.description">Description</button>
+          <button role="tab" data-detail-tab="reviews" aria-selected="false" tabindex="-1" id="tab-reviews" aria-controls="panel-reviews" data-i18n="products.detailModal.reviewsTab">Avis (0)</button>
+        </div>
+        <div class="detail-tab-panel" data-detail-panel="description" id="panel-description" role="tabpanel" aria-labelledby="tab-description">
+          <p id="productDetailDescription"></p>
+          <p class="product-demo-note" data-i18n="products.detailModal.demoNote">Photo illustrative. Prix et disponibilité de démonstration.</p>
+        </div>
+        <div class="detail-tab-panel" data-detail-panel="reviews" id="panel-reviews" role="tabpanel" aria-labelledby="tab-reviews" hidden>
+          <div class="review-summary" id="reviewSummary"></div>
+          <details class="review-form-wrap">
+            <summary data-i18n="products.detailModal.writeReview">Écrire un avis</summary>
+            <form id="reviewForm" class="form-grid">
+              <label class="full"><span data-i18n="reviews.yourRating">Votre note</span>
+                <select name="rating" required>
+                  <option value="5">★★★★★</option>
+                  <option value="4">★★★★</option>
+                  <option value="3">★★★</option>
+                  <option value="2">★★</option>
+                  <option value="1">★</option>
+                </select>
+              </label>
+              <label class="full"><span data-i18n="reviews.reviewTitle">Titre de l'avis</span><input type="text" name="reviewTitle" required maxlength="80"></label>
+              <label class="full"><span data-i18n="reviews.reviewContent">Votre avis</span><textarea name="reviewContent" rows="3" required maxlength="600"></textarea></label>
+              <button type="submit" class="primary-button" data-i18n="reviews.submitBtn">Publier l'avis</button>
+            </form>
+          </details>
+          <div id="reviewList" class="review-list"></div>
+        </div>
+        <div class="detail-actions">
+          <button class="primary-button" id="productDetailAdd" data-i18n="products.detailModal.addToCart">Ajouter au panier</button>
+          <button id="productDetailDone" class="product-detail-done" data-i18n="products.detailModal.continueShopping">Continuer mes achats</button>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- Checkout modal -->
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="checkout-panel">
+      <div class="drawer-heading">
+        <div><span class="eyebrow">COMMANDE</span><h2 id="checkoutTitle">Commande</h2></div>
+        <button id="checkoutClose" class="close-button" aria-label="Fermer">&#215;</button>
+      </div>
+      <ol class="checkout-steps" id="checkoutSteps"></ol>
+      <div class="checkout-body" id="checkoutBody"></div>
+      <div class="checkout-footer">
+        <button class="text-button" id="checkoutPrev">← Retour</button>
+        <button class="primary-button" id="checkoutNext">Suivant →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seller dashboard modal -->
+  <div class="seller-modal" id="sellerModal" role="dialog" aria-modal="true" aria-labelledby="sellerTitle" aria-hidden="true">
+    <div class="seller-panel">
+      <div class="drawer-heading">
+        <div><span class="eyebrow">ESPACE VENDEUR</span><h2 id="sellerTitle" data-i18n="sellerDashboard.title">Espace Vendeur</h2></div>
+        <button id="sellerClose" class="close-button" aria-label="Fermer">&#215;</button>
+      </div>
+      <div class="seller-tabs" id="sellerTabs" role="tablist"></div>
+      <div class="seller-body" id="sellerBody"></div>
+    </div>
+  </div>
+
+  <!-- Auth modal -->
+  <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle" aria-hidden="true">
+    <button class="close-button modal-close" id="authClose" aria-label="Fermer">&#215;</button>
+    <span class="modal-icon" aria-hidden="true">&#10022;</span>
+    <h2 id="authTitle">Connexion</h2>
+    <form id="authForm" class="form-grid auth-form">
+      <label class="full" id="authNameField" hidden><span data-i18n="auth.name">Nom complet</span><input type="text" name="name" autocomplete="name"></label>
+      <label class="full"><span data-i18n="auth.email">Adresse e-mail</span><input type="email" name="email" required autocomplete="email"></label>
+      <label class="full"><span data-i18n="auth.password">Mot de passe</span><input type="password" name="password" required minlength="6" autocomplete="current-password"></label>
+      <button type="submit" class="primary-button full-button" id="authSubmit" data-i18n="auth.loginBtn">Se connecter</button>
+    </form>
+    <button class="install-later" id="authSwitch" data-i18n="auth.noAccount">Pas encore de compte ?</button>
+    <p class="muted small" data-i18n="auth.demoNote">Mode démo — aucune authentification réelle.</p>
+  </div>
+
+  <!-- Generic demo modal -->
+  <div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <button class="close-button modal-close" id="modalClose" aria-label="Fermer">&#215;</button>
+    <span class="modal-icon" aria-hidden="true">&#10022;</span>
+    <h2 id="modalTitle">Aperçu de démonstration</h2>
+    <p id="modalText">Cette fonctionnalité sera connectée dans la prochaine version.</p>
+    <button class="primary-button" id="modalOk" data-i18n="modals.okBtn">Compris</button>
+  </div>
+
+  <script src="/assets/utils/i18n.js"></script>
+  <script src="/assets/utils/storage.js"></script>
+  <script src="/assets/utils/a11y.js"></script>
+  <script src="/assets/utils/pwa.js"></script>
+  <script src="/assets/data/catalog.js"></script>
+  <script src="/assets/data/reviews.js"></script>
   <script src="/assets/app.js"></script>
 </body>
 </html>

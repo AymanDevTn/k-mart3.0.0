@@ -1,4 +1,4 @@
-/**
+﻿/**
  * i18n Utility - Multi-language support for K-mart Market Tunisia
  * Supports: French (fr), Arabic (ar), English (en)
  * Arabic uses RTL layout
@@ -37,7 +37,7 @@ async function loadTranslations(lang) {
  * @param {string} [initialLang] - Optional initial language
  * @returns {Promise<void>}
  */
-export async function initI18n(initialLang) {
+async function initI18n(initialLang) {
   // Determine language: parameter > localStorage > browser > default
   const storedLang = localStorage.getItem(I18N_STORAGE_KEY);
   const browserLang = navigator.language.split('-')[0].toLowerCase();
@@ -54,7 +54,7 @@ export async function initI18n(initialLang) {
  * @param {string} lang - Language code
  * @returns {Promise<void>}
  */
-export async function setLanguage(lang) {
+async function setLanguage(lang) {
   if (!SUPPORTED_LANGUAGES.includes(lang)) {
     console.warn(`Unsupported language: ${lang}, falling back to ${DEFAULT_LANGUAGE}`);
     lang = DEFAULT_LANGUAGE;
@@ -87,7 +87,7 @@ export async function setLanguage(lang) {
  * Get current language
  * @returns {string}
  */
-export function getCurrentLanguage() {
+function getCurrentLanguage() {
   return currentLanguage;
 }
 
@@ -95,7 +95,7 @@ export function getCurrentLanguage() {
  * Check if current language is RTL
  * @returns {boolean}
  */
-export function getIsRTL() {
+function getIsRTL() {
   return isRTL;
 }
 
@@ -105,7 +105,7 @@ export function getIsRTL() {
  * @param {Object} [params] - Parameters for interpolation
  * @returns {string}
  */
-export function t(key, params = {}) {
+function t(key, params = {}) {
   const keys = key.split('.');
   let value = translations;
 
@@ -136,7 +136,7 @@ export function t(key, params = {}) {
 /**
  * Translate all elements with data-i18n attribute
  */
-export function translatePage() {
+function translatePage() {
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.dataset.i18n;
     const translation = t(key);
@@ -355,7 +355,7 @@ function applyRTL() {
  * @param {Object} [options] - Intl.NumberFormat options
  * @returns {string}
  */
-export function formatNumber(value, options = {}) {
+function formatNumber(value, options = {}) {
   const locales = { fr: 'fr-TN', ar: 'ar-TN', en: 'en-TN' };
   return new Intl.NumberFormat(locales[currentLanguage] || 'fr-TN', options).format(value);
 }
@@ -365,7 +365,7 @@ export function formatNumber(value, options = {}) {
  * @param {number} millimes - Amount in millimes (1 TND = 1000 millimes)
  * @returns {string}
  */
-export function formatCurrency(millimes) {
+function formatCurrency(millimes) {
   const dinars = millimes / 1000;
   const locales = { fr: 'fr-TN', ar: 'ar-TN', en: 'en-TN' };
   return new Intl.NumberFormat(locales[currentLanguage] || 'fr-TN', {
@@ -382,7 +382,7 @@ export function formatCurrency(millimes) {
  * @param {Object} [options] - Intl.DateTimeFormat options
  * @returns {string}
  */
-export function formatDate(date, options = {}) {
+function formatDate(date, options = {}) {
   const locales = { fr: 'fr-TN', ar: 'ar-TN', en: 'en-TN' };
   const defaultOptions = { day: 'numeric', month: 'long', year: 'numeric' };
   return new Intl.DateTimeFormat(locales[currentLanguage] || 'fr-TN', { ...defaultOptions, ...options }).format(new Date(date));
@@ -394,7 +394,7 @@ export function formatDate(date, options = {}) {
  * @param {Object} forms - { one: string, other: string }
  * @returns {string}
  */
-export function pluralize(count, forms) {
+function pluralize(count, forms) {
   if (currentLanguage === 'ar') {
     // Arabic has complex pluralization, simplified here
     if (count === 0) return forms.zero || forms.other;
@@ -407,4 +407,5 @@ export function pluralize(count, forms) {
   return count === 1 ? forms.one : forms.other;
 }
 
-export { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE };
+
+window.KMi18n = { initI18n, setLanguage, getCurrentLanguage, getIsRTL, t, translatePage, formatNumber, formatCurrency, formatDate, pluralize, SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE };

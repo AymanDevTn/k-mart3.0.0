@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Storage Utility - localStorage persistence for K-mart Market Tunisia
  * Handles: cart, wishlist, recently viewed, user preferences, daily check-in, flash sale
  */
@@ -21,7 +21,7 @@ const MAX_WISHLIST_ITEMS = 100;
 /**
  * Generic storage helpers
  */
-function get(key, defaultValue = null) {
+function storageGet(key, defaultValue = null) {
   try {
     const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : defaultValue;
@@ -31,7 +31,7 @@ function get(key, defaultValue = null) {
   }
 }
 
-function set(key, value) {
+function storageSet(key, value) {
   try {
     localStorage.setItem(key, JSON.stringify(value));
     return true;
@@ -41,7 +41,7 @@ function set(key, value) {
   }
 }
 
-function remove(key) {
+function storageRemove(key) {
   try {
     localStorage.removeItem(key);
     return true;
@@ -54,10 +54,10 @@ function remove(key) {
 /**
  * Cart storage
  */
-export const cartStorage = {
-  get: () => get(STORAGE_KEYS.CART, {}),
-  set: (cart) => set(STORAGE_KEYS.CART, cart),
-  clear: () => remove(STORAGE_KEYS.CART),
+const cartStorage = {
+  get: () => storageGet(STORAGE_KEYS.CART, {}),
+  set: (cart) => storageSet(STORAGE_KEYS.CART, cart),
+  clear: () => storageRemove(STORAGE_KEYS.CART),
   addItem: (productId, quantity = 1) => {
     const cart = cartStorage.get();
     cart[productId] = (cart[productId] || 0) + quantity;
@@ -97,10 +97,10 @@ export const cartStorage = {
 /**
  * Wishlist storage
  */
-export const wishlistStorage = {
-  get: () => get(STORAGE_KEYS.WISHLIST, []),
-  set: (wishlist) => set(STORAGE_KEYS.WISHLIST, wishlist),
-  clear: () => remove(STORAGE_KEYS.WISHLIST),
+const wishlistStorage = {
+  get: () => storageGet(STORAGE_KEYS.WISHLIST, []),
+  set: (wishlist) => storageSet(STORAGE_KEYS.WISHLIST, wishlist),
+  clear: () => storageRemove(STORAGE_KEYS.WISHLIST),
   has: (productId) => wishlistStorage.get().includes(String(productId)),
   add: (productId) => {
     const wishlist = wishlistStorage.get();
@@ -138,10 +138,10 @@ export const wishlistStorage = {
 /**
  * Recently viewed storage
  */
-export const recentlyViewedStorage = {
-  get: () => get(STORAGE_KEYS.RECENTLY_VIEWED, []),
-  set: (list) => set(STORAGE_KEYS.RECENTLY_VIEWED, list),
-  clear: () => remove(STORAGE_KEYS.RECENTLY_VIEWED),
+const recentlyViewedStorage = {
+  get: () => storageGet(STORAGE_KEYS.RECENTLY_VIEWED, []),
+  set: (list) => storageSet(STORAGE_KEYS.RECENTLY_VIEWED, list),
+  clear: () => storageRemove(STORAGE_KEYS.RECENTLY_VIEWED),
   add: (productId) => {
     const list = recentlyViewedStorage.get();
     const id = String(productId);
@@ -165,9 +165,9 @@ export const recentlyViewedStorage = {
 /**
  * Daily visit reward storage
  */
-export const dailyVisitStorage = {
-  get: () => get(STORAGE_KEYS.DAILY_VISIT, { points: 0, streak: 0, lastDay: '' }),
-  set: (state) => set(STORAGE_KEYS.DAILY_VISIT, state),
+const dailyVisitStorage = {
+  get: () => storageGet(STORAGE_KEYS.DAILY_VISIT, { points: 0, streak: 0, lastDay: '' }),
+  set: (state) => storageSet(STORAGE_KEYS.DAILY_VISIT, state),
   getLocalDay: () => {
     const d = new Date();
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -196,7 +196,7 @@ export const dailyVisitStorage = {
 /**
  * Flash sale countdown storage
  */
-export const flashSaleStorage = {
+const flashSaleStorage = {
   getEndTime: () => {
     const stored = localStorage.getItem(STORAGE_KEYS.FLASH_SALE);
     let endTime = stored ? Number(stored) : 0;
@@ -218,14 +218,14 @@ export const flashSaleStorage = {
 /**
  * User preferences storage
  */
-export const preferencesStorage = {
-  get: () => get(STORAGE_KEYS.USER_PREFERENCES, {
+const preferencesStorage = {
+  get: () => storageGet(STORAGE_KEYS.USER_PREFERENCES, {
     theme: 'light',
     notifications: true,
     emailUpdates: false,
     currency: 'TND'
   }),
-  set: (prefs) => set(STORAGE_KEYS.USER_PREFERENCES, prefs),
+  set: (prefs) => storageSet(STORAGE_KEYS.USER_PREFERENCES, prefs),
   update: (key, value) => {
     const prefs = preferencesStorage.get();
     prefs[key] = value;
@@ -237,7 +237,7 @@ export const preferencesStorage = {
 /**
  * Install nudge dismissed storage
  */
-export const installNudgeStorage = {
+const installNudgeStorage = {
   isDismissed: () => localStorage.getItem(STORAGE_KEYS.INSTALL_NUDGE_DISMISSED) === '1',
   dismiss: () => localStorage.setItem(STORAGE_KEYS.INSTALL_NUDGE_DISMISSED, '1'),
   reset: () => localStorage.removeItem(STORAGE_KEYS.INSTALL_NUDGE_DISMISSED)
@@ -246,13 +246,13 @@ export const installNudgeStorage = {
 /**
  * Seller dashboard demo storage
  */
-export const sellerDashboardStorage = {
-  get: () => get(STORAGE_KEYS.SELLER_DASHBOARD, {
+const sellerDashboardStorage = {
+  get: () => storageGet(STORAGE_KEYS.SELLER_DASHBOARD, {
     products: [],
     orders: [],
     analytics: { views: 0, sales: 0, revenue: 0 }
   }),
-  set: (data) => set(STORAGE_KEYS.SELLER_DASHBOARD, data),
+  set: (data) => storageSet(STORAGE_KEYS.SELLER_DASHBOARD, data),
   addProduct: (product) => {
     const data = sellerDashboardStorage.get();
     product.id = product.id || Date.now().toString();
@@ -301,4 +301,5 @@ export const sellerDashboardStorage = {
   }
 };
 
-export { STORAGE_KEYS };
+
+window.KMStorage = { cartStorage, wishlistStorage, recentlyViewedStorage, dailyVisitStorage, flashSaleStorage, preferencesStorage, installNudgeStorage, sellerDashboardStorage, STORAGE_KEYS };

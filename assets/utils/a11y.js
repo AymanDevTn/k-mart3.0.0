@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Accessibility Utility - WCAG 2.1 AA compliance helpers for K-mart Market Tunisia
  */
 
@@ -10,7 +10,7 @@ const focusableSelectors = 'a[href], button:not([disabled]), input:not([disabled
  * @param {HTMLElement} container - Container to trap focus in
  * @returns {Function} Cleanup function to remove trap
  */
-export function trapFocus(container) {
+function trapFocus(container) {
   const focusableElements = container.querySelectorAll(focusableSelectors);
   const firstElement = focusableElements[0];
   const lastElement = focusableElements[focusableElements.length - 1];
@@ -42,11 +42,11 @@ export function trapFocus(container) {
 /**
  * Save current focus and restore later
  */
-export function saveFocus() {
+function saveFocus() {
   lastFocusedElement = document.activeElement;
 }
 
-export function restoreFocus() {
+function restoreFocus() {
   if (lastFocusedElement && lastFocusedElement.focus) {
     lastFocusedElement.focus();
   }
@@ -57,7 +57,7 @@ export function restoreFocus() {
  * @param {string} message - Message to announce
  * @param {string} [priority='polite'] - 'polite' or 'assertive'
  */
-export function announce(message, priority = 'polite') {
+function announce(message, priority = 'polite') {
   const announcer = getOrCreateAnnouncer(priority);
   announcer.textContent = message;
   // Clear after announcement to allow repeated messages
@@ -82,7 +82,7 @@ function getOrCreateAnnouncer(priority) {
 /**
  * Skip to main content link
  */
-export function createSkipLink() {
+function createSkipLink() {
   const skipLink = document.createElement('a');
   skipLink.href = '#main-content';
   skipLink.className = 'skip-link';
@@ -116,7 +116,7 @@ export function createSkipLink() {
  * @param {HTMLElement} target - Element that expands/collapses
  * @param {boolean} expanded - Whether expanded
  */
-export function setExpanded(trigger, target, expanded) {
+function setExpanded(trigger, target, expanded) {
   trigger.setAttribute('aria-expanded', expanded);
   if (target) {
     target.setAttribute('aria-hidden', !expanded);
@@ -128,7 +128,7 @@ export function setExpanded(trigger, target, expanded) {
  * @param {HTMLElement} element - Element to mark as selected
  * @param {boolean} selected - Whether selected
  */
-export function setSelected(element, selected) {
+function setSelected(element, selected) {
   element.setAttribute('aria-selected', selected);
   if (selected) {
     element.setAttribute('tabindex', '0');
@@ -142,7 +142,7 @@ export function setSelected(element, selected) {
  * @param {HTMLElement} container - Container with focusable children
  * @param {string} [orientation='horizontal'] - 'horizontal' or 'vertical'
  */
-export function setupArrowNavigation(container, orientation = 'horizontal') {
+function setupArrowNavigation(container, orientation = 'horizontal') {
   const items = container.querySelectorAll('[role="tab"], [role="option"], [role="menuitem"]');
   const itemArray = Array.from(items);
 
@@ -187,14 +187,14 @@ export function setupArrowNavigation(container, orientation = 'horizontal') {
  * Reduce motion support
  * @returns {boolean} Whether user prefers reduced motion
  */
-export function prefersReducedMotion() {
+function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
 /**
  * Add focus-visible polyfill behavior
  */
-export function initFocusVisible() {
+function initFocusVisible() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Tab') {
       document.body.classList.add('keyboard-nav');
@@ -212,7 +212,7 @@ export function initFocusVisible() {
  * @param {string} background - Background color
  * @returns {number} Contrast ratio
  */
-export function getContrastRatio(foreground, background) {
+function getContrastRatio(foreground, background) {
   // Simplified - in production use a proper library
   const getLuminance = (color) => {
     const rgb = hexToRgb(color);
@@ -239,7 +239,7 @@ export function getContrastRatio(foreground, background) {
 /**
  * Initialize all accessibility features
  */
-export function initA11y() {
+function initA11y() {
   createSkipLink();
   initFocusVisible();
 
@@ -259,4 +259,5 @@ export function initA11y() {
   }).observe(document, { subtree: true, childList: true });
 }
 
-export { focusableSelectors };
+
+window.KMa11y = { trapFocus, saveFocus, restoreFocus, announce, createSkipLink, setExpanded, setSelected, setupArrowNavigation, prefersReducedMotion, initFocusVisible, getContrastRatio, initA11y, focusableSelectors };

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * PWA Utility - Enhanced PWA features for K-mart Market Tunisia
  * Offline support, background sync, push notifications, caching strategies
  */
@@ -22,7 +22,7 @@ let syncQueue = [];
 /**
  * Initialize PWA features
  */
-export async function initPWA() {
+async function initPWA() {
   registerServiceWorker();
   setupInstallPrompt();
   setupOnlineOfflineDetection();
@@ -73,7 +73,7 @@ function setupInstallPrompt() {
     deferredInstallPrompt = null;
     hideInstallNudge();
     hideInstallModal();
-    showToast('K-mart Market a été installé !');
+    pwaToast('K-mart Market a été installé !');
     // Track install event
     trackEvent('pwa_install');
   });
@@ -108,32 +108,32 @@ function hideInstallNudge() {
 /**
  * Show install modal
  */
-export function showInstallModal() {
+function showInstallModal() {
   const modal = document.getElementById('installModal');
   if (modal) {
     modal.classList.add('open');
     document.getElementById('overlay')?.classList.add('show');
-    saveFocus();
-    trapFocus(modal);
+    window.KMa11y.saveFocus();
+    window.KMa11y.trapFocus(modal);
   }
 }
 
 /**
  * Hide install modal
  */
-export function hideInstallModal() {
+function hideInstallModal() {
   const modal = document.getElementById('installModal');
   if (modal) {
     modal.classList.remove('open');
     document.getElementById('overlay')?.classList.remove('show');
-    restoreFocus();
+    window.KMa11y.restoreFocus();
   }
 }
 
 /**
  * Trigger install prompt
  */
-export async function promptInstall() {
+async function promptInstall() {
   if (deferredInstallPrompt) {
     deferredInstallPrompt.prompt();
     const { outcome } = await deferredInstallPrompt.userChoice;
@@ -152,7 +152,7 @@ export async function promptInstall() {
 /**
  * Get platform-specific install instructions
  */
-export function getInstallInstructions() {
+function getInstallInstructions() {
   const ua = navigator.userAgent;
   if (/iPhone|iPad|iPod/i.test(ua)) {
     return 'Sur iPhone/iPad : touchez Partager dans Safari, puis « Sur l\'écran d\'accueil ». iOS ne propose pas le même bouton d\'installation que Chrome.';
@@ -171,14 +171,14 @@ function setupOnlineOfflineDetection() {
   window.addEventListener('online', () => {
     isOnline = true;
     document.body.classList.remove('offline');
-    showToast('Connexion rétablie');
+    pwaToast('Connexion rétablie');
     processSyncQueue();
   });
 
   window.addEventListener('offline', () => {
     isOnline = false;
     document.body.classList.add('offline');
-    showToast('Mode hors ligne - Certaines fonctionnalités sont limitées');
+    pwaToast('Mode hors ligne - Certaines fonctionnalités sont limitées');
   });
 
   // Initial state
@@ -194,7 +194,7 @@ function setupBackgroundSync() {
   // Listen for sync events from service worker
   navigator.serviceWorker.addEventListener('message', (event) => {
     if (event.data.type === 'SYNC_COMPLETE') {
-      showToast('Données synchronisées');
+      pwaToast('Données synchronisées');
     }
   });
 
@@ -208,7 +208,7 @@ function setupBackgroundSync() {
  * Add request to sync queue
  * @param {Object} requestData - Request data to queue
  */
-export function queueForSync(requestData) {
+function queueForSync(requestData) {
   syncQueue.push({
     ...requestData,
     timestamp: Date.now(),
@@ -315,7 +315,7 @@ async function precacheCriticalResources() {
  * @param {Response} response - Fetch response
  * @param {string} strategy - Cache strategy
  */
-export async function cacheResponse(request, response, strategy = 'network-first') {
+async function cacheResponse(request, response, strategy = 'network-first') {
   if (!('caches' in window) || !response.ok) return response;
 
   const cache = await caches.open(CACHE_NAME);
@@ -343,7 +343,7 @@ export async function cacheResponse(request, response, strategy = 'network-first
  * @param {Request} request - Fetch request
  * @returns {Promise<Response|null>}
  */
-export async function getCachedResponse(request) {
+async function getCachedResponse(request) {
   if (!('caches' in window)) return null;
   const cache = await caches.open(CACHE_NAME);
   return await cache.match(request);
@@ -352,7 +352,7 @@ export async function getCachedResponse(request) {
 /**
  * Clear old cache entries
  */
-export async function cleanupCache() {
+async function cleanupCache() {
   if (!('caches' in window)) return;
 
   const cache = await caches.open(CACHE_NAME);
@@ -395,7 +395,7 @@ function showUpdateAvailable() {
  * Show toast notification
  * @param {string} message - Message to show
  */
-function showToast(message) {
+function pwaToast(message) {
   const toast = document.getElementById('toast');
   if (toast) {
     toast.textContent = message;
@@ -419,7 +419,7 @@ function trackEvent(eventName, params = {}) {
  * Check if app is running in standalone mode
  * @returns {boolean}
  */
-export function isStandalone() {
+function isStandalone() {
   return window.matchMedia('(display-mode: standalone)').matches ||
          window.navigator.standalone === true;
 }
@@ -428,7 +428,7 @@ export function isStandalone() {
  * Request notification permission
  * @returns {Promise<NotificationPermission>}
  */
-export async function requestNotificationPermission() {
+async function requestNotificationPermission() {
   if (!('Notification' in window)) {
     return 'denied';
   }
@@ -449,7 +449,7 @@ export async function requestNotificationPermission() {
  * Subscribe to push notifications (demo)
  * @returns {Promise<PushSubscription|null>}
  */
-export async function subscribeToPush() {
+async function subscribeToPush() {
   if (!('PushManager' in window)) return null;
 
   try {
@@ -480,7 +480,7 @@ function urlBase64ToUint8Array(base64String) {
  * Get cache storage estimate
  * @returns {Promise<{usage: number, quota: number}>}
  */
-export async function getCacheEstimate() {
+async function getCacheEstimate() {
   if ('storage' in navigator && 'estimate' in navigator.storage) {
     return await navigator.storage.estimate();
   }
@@ -490,10 +490,11 @@ export async function getCacheEstimate() {
 /**
  * Clear all caches
  */
-export async function clearAllCaches() {
+async function clearAllCaches() {
   if (!('caches' in window)) return;
   const cacheNames = await caches.keys();
   await Promise.all(cacheNames.map(name => caches.delete(name)));
 }
 
-export { isOnline, CACHE_NAME };
+
+window.KMPWA = { initPWA, showInstallModal, hideInstallModal, promptInstall, getInstallInstructions, queueForSync, cacheResponse, getCachedResponse, cleanupCache, isStandalone, requestNotificationPermission, subscribeToPush, getCacheEstimate, clearAllCaches, CACHE_NAME };

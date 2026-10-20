@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1168B3" />
+  <title>Hors ligne — K-mart Market</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/assets/styles-v23.css" />
+</head>
+<body>
+  <main id="main-content" style="max-width:560px;margin:0 auto;padding:80px 24px;text-align:center">
+    <img src="/assets/kmart-brand-identity.png" alt="K-mart.tn — Market for everything" style="width:180px;height:auto;margin:0 auto 28px;display:block" />
+    <span class="eyebrow">K-MART MARKET</span>
+    <h1 style="font:800 32px Manrope,sans-serif;color:#102b67;letter-spacing:-1px;margin:12px 0">Vous êtes hors ligne</h1>
+    <p style="color:#6e788a;font-size:14px;line-height:1.7;margin-bottom:26px">
+      La connexion réseau est indisponible. Les pages déjà visitées restent accessibles,
+      et votre panier, vos favoris et vos avis sont conservés sur cet appareil.
+    </p>
+    <button class="primary-button" onclick="location.reload()">Réessayer <span aria-hidden="true">→</span></button>
+    <p style="margin-top:26px"><a href="/" style="color:#1168b3;font-weight:700">Retour à l'accueil</a></p>
+  </main>
+  <script>
+    window.addEventListener('online', function () { location.reload(); });
+  </script>
+</body>
+</html>
